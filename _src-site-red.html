@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>CCEG — Crimson Site</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet"><style>
+body{margin:0;background:#131619;font-family:"Figtree",system-ui,sans-serif;}
+a{color:inherit;} a:hover{opacity:0.85;}
+@keyframes dissolve{0%,100%{opacity:1;filter:blur(0);}50%{opacity:0.2;filter:blur(4px);}}
+@keyframes solidify{0%,35%{color:transparent;-webkit-text-stroke:2.5px var(--stroke-soft);filter:blur(3px);opacity:0.5;}65%,100%{color:var(--solid);-webkit-text-stroke:0px transparent;filter:blur(0);opacity:1;}}
+@keyframes gaswander1{0%,100%{transform:translate(0,0) scale(1);}30%{transform:translate(26px,-20px) scale(1.25);}65%{transform:translate(-14px,16px) scale(0.85);}}
+@keyframes gaswander2{0%,100%{transform:translate(0,0) scale(1.1);}40%{transform:translate(-22px,-14px) scale(0.9);}75%{transform:translate(18px,12px) scale(1.3);}}
+@keyframes pairword{0%{offset-distance:0%;opacity:0;filter:blur(7px);letter-spacing:0.3em;}2%{opacity:0.85;}15%{filter:blur(1.5px);}19%{opacity:0.9;}20%{offset-distance:100%;opacity:0;filter:blur(0);letter-spacing:0.02em;}100%{offset-distance:100%;opacity:0;}}
+@keyframes pairobj{0%,19%{opacity:0;transform:scale(0.5) translateY(14px);}22%{opacity:1;transform:scale(1.1) translateY(-2px);}24%{transform:scale(1) translateY(0);}40%{opacity:1;transform:scale(1);}45%,100%{opacity:0;transform:scale(0.85) translateY(6px);}}
+@keyframes wordflow{0%{offset-distance:0%;filter:blur(6px);opacity:0;letter-spacing:0.35em;transform:scale(1.15);}10%{opacity:0.75;}65%{filter:blur(1.5px);letter-spacing:0.1em;}90%{opacity:0.85;filter:blur(0);}100%{offset-distance:100%;opacity:0;letter-spacing:0;transform:scale(0.7);}}
+@keyframes coinpop{0%,88%,100%{transform:scale(1) translateY(0);}93%{transform:scale(1.12) translateY(-3px);}}
+@keyframes stacklight{0%,86%,100%{opacity:0.35;}92%{opacity:1;}}
+@keyframes ringfill{0%,30%{border-style:dashed;opacity:0.45;}70%,100%{border-style:solid;opacity:1;}}
+@keyframes aurora1{0%,100%{transform:translate(0,0) scale(1);}33%{transform:translate(140px,-70px) scale(1.18);}66%{transform:translate(-90px,50px) scale(0.92);}}
+@keyframes aurora2{0%,100%{transform:translate(0,0) scale(1.05);}40%{transform:translate(-120px,60px) scale(0.9);}75%{transform:translate(90px,-40px) scale(1.2);}}
+@keyframes riseup{0%{transform:translateY(0);opacity:0;}10%{opacity:0.9;}85%{opacity:0.6;}100%{transform:translateY(-900px);opacity:0;}}
+
+body{padding:0;display:flex;justify-content:center;align-items:flex-start;}</style><template id="__bundler_thumbnail"><svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="800" fill="#100f10"></rect><circle cx="600" cy="360" r="180" fill="#d42b27"></circle><text x="600" y="620" text-anchor="middle" font-family="Georgia, serif" font-size="120" font-weight="bold" fill="#f6f2ef">CCEG</text></svg></template></head>
+<body>
+<div id="2b" style="position:relative;flex:none;">
+    
+    <div style="position:relative;width:1440px;overflow:hidden;border-radius:24px;background:var(--bg);color:var(--text);box-shadow:0 24px 70px rgba(0,0,0,0.55);--bg:#100f10;--surface:#1b191a;--text:#f6f2ef;--muted:#a09793;--line:rgba(246,242,239,0.13);--red:#d42b27;--red-300:#f0857f;--red-600:#9c1815;--ember:#f05340;--bone:#e8ddd2;">
+      
+        <div style="position:absolute;inset:0;pointer-events:none;">
+          <div style="position:absolute;left:-180px;top:-160px;width:900px;height:760px;border-radius:50%;background:radial-gradient(circle,rgba(212,43,39,0.3),transparent 65%);filter:blur(70px);animation:aurora1 19s ease-in-out infinite;"></div>
+          <div style="position:absolute;right:-220px;top:-60px;width:980px;height:820px;border-radius:50%;background:radial-gradient(circle,rgba(240,83,64,0.2),transparent 65%);filter:blur(80px);animation:aurora2 24s ease-in-out infinite;"></div>
+          <div style="position:absolute;left:32%;top:340px;width:760px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(232,221,210,0.1),transparent 65%);filter:blur(80px);animation:aurora1 28s ease-in-out 6s infinite;"></div>
+        </div>
+      
+      
+        <div style="position:absolute;inset:0;pointer-events:none;">
+          <div style="position:absolute;left:8%;bottom:-20px;width:7px;height:7px;border-radius:50%;background:var(--red);animation:riseup 14s linear infinite;"></div>
+          <div style="position:absolute;left:22%;bottom:-20px;width:5px;height:5px;border-radius:50%;background:var(--bone);animation:riseup 18s linear 3s infinite;"></div>
+          <div style="position:absolute;left:41%;bottom:-20px;width:6px;height:6px;border-radius:50%;background:var(--red-300);animation:riseup 16s linear 7s infinite;"></div>
+          <div style="position:absolute;left:58%;bottom:-20px;width:4px;height:4px;border-radius:50%;background:var(--ember);animation:riseup 20s linear 1.5s infinite;"></div>
+          <div style="position:absolute;left:73%;bottom:-20px;width:7px;height:7px;border-radius:50%;background:var(--red-300);animation:riseup 15s linear 9s infinite;"></div>
+          <div style="position:absolute;left:88%;bottom:-20px;width:5px;height:5px;border-radius:50%;background:var(--bone);animation:riseup 17s linear 5s infinite;"></div>
+        </div>
+      
+      <div style="position:relative;">
+        <div style="display:flex;justify-content:flex-end;gap:18px;padding:8px 56px;background:rgba(27,25,26,0.7);font-size:12px;">
+          <a href="#" style="color:var(--muted);text-decoration:none;">Members' area</a>
+          <a href="#" style="color:var(--muted);text-decoration:none;">Social Value &amp; Intangibles Review</a>
+          <a href="#" style="color:var(--red-300);text-decoration:none;font-weight:700;">Join 320,000 members</a>
+        </div>
+        <header style="display:flex;align-items:center;justify-content:space-between;padding:18px 56px;gap:24px;border-bottom:1px solid var(--line);">
+          <div style="display:flex;align-items:center;gap:16px;">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div style="position:relative;width:44px;height:39px;">
+                <div style="position:absolute;left:0;top:0;width:27px;height:27px;border-radius:50%;background:radial-gradient(circle at 38% 35%,#f0857f,#d42b27 58%,transparent 74%);filter:blur(4px);opacity:0.9;"></div>
+                <div style="position:absolute;right:0;bottom:0;width:24px;height:24px;border-radius:8px;background:linear-gradient(135deg,#e8433c,#9c1815);"></div>
+                <div style="position:absolute;right:9px;bottom:9px;width:5px;height:5px;border-radius:50%;background:#f6f2ef;"></div>
+              </div>
+              <span style="font:700 24px/1 'Figtree',sans-serif;letter-spacing:0.02em;color:var(--text);">CCEG</span>
+            </div>
+            <span style="font-size:11.5px;line-height:1.35;max-width:180px;color:var(--muted);">Centre for Citizenship, Enterprise &amp; Governance</span>
+          </div>
+          <nav style="display:flex;align-items:center;gap:4px;">
+            <a href="#" style="text-decoration:none;color:var(--text);font-size:13px;font-weight:700;padding:10px 15px;border-radius:999px;background:rgba(212,43,39,0.2);">iRWA</a>
+            <a href="#" style="text-decoration:none;color:var(--muted);font-size:13px;font-weight:700;padding:10px 15px;border-radius:999px;">Genome of Values</a>
+            <a href="#" style="text-decoration:none;color:var(--muted);font-size:13px;font-weight:700;padding:10px 15px;border-radius:999px;">Research</a>
+            <a href="#" style="text-decoration:none;color:var(--muted);font-size:13px;font-weight:700;padding:10px 15px;border-radius:999px;">Education</a>
+            <a href="#" style="text-decoration:none;color:var(--muted);font-size:13px;font-weight:700;padding:10px 15px;border-radius:999px;">Leadership</a>
+            <a href="#" style="text-decoration:none;color:var(--muted);font-size:13px;font-weight:700;padding:10px 15px;border-radius:999px;">Advisory Board</a>
+            <a href="#" style="text-decoration:none;color:#fff;background:var(--red);font-size:13px;font-weight:700;padding:11px 20px;border-radius:999px;margin-left:10px;">Contact</a>
+          </nav>
+        </header>
+        <div style="padding:60px 56px 8px;display:flex;flex-direction:column;gap:26px;align-items:flex-start;max-width:1010px;">
+          <span style="font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--red-300);font-weight:700;">World's leading think tank on the movement of non-financial value · est. 2011 · 320,000 members</span>
+          <div style="font-family:'Caprasimo',serif;font-size:96px;line-height:1.03;letter-spacing:-0.01em;color:var(--text);">
+            <div>We made the</div>
+            <div style="display:flex;align-items:baseline;gap:32px;">
+              <span style="color:transparent;-webkit-text-stroke:2.5px rgba(232,221,210,0.4);display:inline-flex;">
+                <span style="animation:dissolve 6s ease-in-out infinite;">int</span>
+                <span style="animation:dissolve 6s ease-in-out 0.9s infinite;">ang</span>
+                <span style="animation:dissolve 6s ease-in-out 0.4s infinite;">ib</span>
+                <span style="animation:dissolve 6s ease-in-out 1.3s infinite;">le</span>
+              </span>
+              <span style="--stroke-soft:rgba(232,221,210,0.4);--solid:#d42b27;animation:solidify 6s ease-in-out infinite;">tangible.</span>
+            </div>
+          </div>
+          <p style="font-size:17px;line-height:1.65;max-width:580px;color:var(--muted);margin:0;">The value everyone feels and no one could hold — researched, measured by sentiment, transacted on blockchain, implemented in the real economy. Watch it become something you can hold.</p>
+          <div style="display:flex;gap:14px;">
+            <a href="#" style="text-decoration:none;background:var(--red);color:#fff;border-radius:999px;padding:13px 28px;font-size:15px;font-weight:700;">Discover iRWA</a>
+            <a href="#" style="text-decoration:none;border:2px solid rgba(232,221,210,0.4);color:var(--bone);border-radius:999px;padding:11px 26px;font-size:15px;font-weight:700;">The Genome of Values</a>
+          </div>
+        </div>
+        <div style="position:relative;height:330px;margin:0 56px;">
+          <div style="position:absolute;left:0;top:70px;width:100px;height:100px;border-radius:50%;background:radial-gradient(circle,rgba(240,133,127,0.45),transparent 70%);filter:blur(12px);animation:gaswander1 7s ease-in-out infinite;"></div>
+          <div style="position:absolute;left:44px;top:120px;width:64px;height:64px;border-radius:50%;background:radial-gradient(circle,rgba(232,221,210,0.35),transparent 70%);filter:blur(10px);animation:gaswander2 8.5s ease-in-out infinite;"></div>
+          <div style="position:absolute;left:-8px;top:150px;width:52px;height:52px;border-radius:50%;background:radial-gradient(circle,rgba(212,43,39,0.4),transparent 70%);filter:blur(9px);animation:gaswander1 9.5s ease-in-out 1.4s infinite;"></div>
+          <span style="position:absolute;left:16px;top:34px;font-size:11px;letter-spacing:0.13em;text-transform:uppercase;color:var(--muted);font-weight:700;">intangible value</span>
+          <div style="position:absolute;inset:0;pointer-events:none;">
+            <span style="position:absolute;opacity:0;font-family:'Caprasimo',serif;font-size:30px;color:var(--red-300);offset-path:path('M50,130 C320,60 580,200 850,120 C1060,70 1170,128 1216,128');offset-rotate:0deg;animation:pairword 36s ease-in 0s infinite;">love</span>
+            <span style="position:absolute;opacity:0;font-family:'Caprasimo',serif;font-size:28px;color:var(--bone);offset-path:path('M40,160 C330,220 590,80 850,160 C1060,190 1170,132 1216,130');offset-rotate:0deg;animation:pairword 36s ease-in 9s infinite;">trust</span>
+            <span style="position:absolute;opacity:0;font-family:'Caprasimo',serif;font-size:27px;color:var(--ember);offset-path:path('M56,110 C340,180 600,60 860,150 C1070,190 1180,130 1216,129');offset-rotate:0deg;animation:pairword 36s ease-in 18s infinite;">care</span>
+            <span style="position:absolute;opacity:0;font-family:'Caprasimo',serif;font-size:26px;color:var(--red-300);offset-path:path('M44,180 C320,110 590,210 850,90 C1070,40 1180,126 1216,128');offset-rotate:0deg;animation:pairword 36s ease-in 27s infinite;">purpose</span>
+          </div>
+          <div style="position:absolute;right:0;top:44px;width:170px;display:flex;flex-direction:column;align-items:center;gap:10px;">
+            <span style="font-size:11px;letter-spacing:0.13em;text-transform:uppercase;color:var(--red-300);font-weight:700;">tangible</span>
+            <div style="position:relative;width:96px;height:96px;">
+              <div style="position:absolute;inset:0;opacity:0;border-radius:20px;background:var(--red);box-shadow:0 12px 28px rgba(212,43,39,0.45);display:flex;align-items:center;justify-content:center;animation:pairobj 36s ease-out 0s infinite;">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"></path><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"></path><line x1="6" y1="2" x2="6" y2="4"></line><line x1="10" y1="2" x2="10" y2="4"></line><line x1="14" y1="2" x2="14" y2="4"></line></svg>
+              </div>
+              <div style="position:absolute;inset:0;opacity:0;border-radius:20px;background:var(--bone);box-shadow:0 12px 28px rgba(232,221,210,0.25);display:flex;align-items:center;justify-content:center;animation:pairobj 36s ease-out 9s infinite;">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#100f10" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10.5 9-7.5 9 7.5"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg>
+              </div>
+              <div style="position:absolute;inset:0;opacity:0;border-radius:20px;background:var(--ember);box-shadow:0 12px 28px rgba(240,83,64,0.4);display:flex;align-items:center;justify-content:center;animation:pairobj 36s ease-out 18s infinite;">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16a8 8 0 0 1-16 0Z"></path><path d="M9 8c0-1.5 1-2 1-3"></path><path d="M14 8c0-1.5 1-2 1-3"></path></svg>
+              </div>
+              <div style="position:absolute;inset:0;opacity:0;border-radius:20px;background:var(--red-600);box-shadow:0 12px 28px rgba(156,24,21,0.5);display:flex;align-items:center;justify-content:center;animation:pairobj 36s ease-out 27s infinite;">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="7" ry="3"></ellipse><path d="M5 6v6c0 1.66 3.13 3 7 3s7-1.34 7-3V6"></path><path d="M5 12v6c0 1.66 3.13 3 7 3s7-1.34 7-3v-6"></path></svg>
+              </div>
+            </div>
+            <div style="position:relative;width:170px;height:20px;">
+              <span style="position:absolute;inset:0;opacity:0;text-align:center;font-size:13px;font-weight:700;color:var(--red-300);animation:pairobj 36s ease-out 0s infinite;">love became a coffee</span>
+              <span style="position:absolute;inset:0;opacity:0;text-align:center;font-size:13px;font-weight:700;color:var(--bone);animation:pairobj 36s ease-out 9s infinite;">trust became a home</span>
+              <span style="position:absolute;inset:0;opacity:0;text-align:center;font-size:13px;font-weight:700;color:var(--ember);animation:pairobj 36s ease-out 18s infinite;">care became a meal</span>
+              <span style="position:absolute;inset:0;opacity:0;text-align:center;font-size:13px;font-weight:700;color:var(--red-300);animation:pairobj 36s ease-out 27s infinite;">purpose became a pension</span>
+            </div>
+          </div>
+          <div style="position:absolute;left:0;right:0;top:236px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;">
+            <div style="display:flex;flex-direction:column;gap:2px;border-top:2px solid rgba(232,221,210,0.3);padding-top:10px;">
+              <span style="font-size:12px;font-weight:700;color:var(--bone);">01 · Research</span>
+              <span style="font-size:12px;color:var(--muted);">the science of value</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:2px;border-top:2px solid rgba(232,221,210,0.55);padding-top:10px;">
+              <span style="font-size:12px;font-weight:700;color:var(--bone);">02 · Measurement</span>
+              <span style="font-size:12px;color:var(--muted);">sentiment analysis</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:2px;border-top:2px solid rgba(240,83,64,0.65);padding-top:10px;">
+              <span style="font-size:12px;font-weight:700;color:var(--red-300);">03 · Transactions</span>
+              <span style="font-size:12px;color:var(--muted);">blockchain ledger</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:2px;border-top:2px solid var(--red);padding-top:10px;">
+              <span style="font-size:12px;font-weight:700;color:var(--red-300);">04 · Implementation</span>
+              <span style="font-size:12px;color:var(--muted);">retail · corporate · government</span>
+            </div>
+          </div>
+        </div>
+        <div style="position:relative;padding:34px 56px 8px;">
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:center;">
+            <div style="justify-self:center;width:212px;height:212px;border-radius:50%;border:3px dashed rgba(160,151,147,0.6);animation:ringfill 8s ease-in-out infinite;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:26px;">
+              <span style="font-family:'Caprasimo',serif;font-size:15px;color:var(--muted);">01 · Research</span>
+              <span style="font-size:12.5px;color:var(--muted);line-height:1.45;">the science of how non-financial value behaves</span>
+            </div>
+            <div style="justify-self:center;width:212px;height:212px;border-radius:50%;background:rgba(232,221,210,0.1);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:26px;">
+              <span style="font-family:'Caprasimo',serif;font-size:15px;color:var(--bone);">02 · Measurement</span>
+              <span style="font-size:12.5px;color:var(--bone);line-height:1.45;">a number where there was a feeling</span>
+            </div>
+            <div style="justify-self:center;width:212px;height:212px;border-radius:50%;background:var(--red-600);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:26px;">
+              <span style="font-family:'Caprasimo',serif;font-size:15px;color:#fff;">03 · Transactions</span>
+              <span style="font-size:12.5px;color:var(--red-300);line-height:1.45;">blockchain gives measured value permanence</span>
+            </div>
+            <div style="justify-self:center;width:212px;height:212px;border-radius:50%;background:var(--red);box-shadow:0 14px 34px rgba(212,43,39,0.4);animation:coinpop 8s ease-in-out infinite;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:26px;">
+              <span style="font-family:'Caprasimo',serif;font-size:15px;color:#fff;">04 · Implementation</span>
+              <span style="font-size:12.5px;color:#ffd9d5;line-height:1.45;">retail · corporate · government — value in the real economy</span>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:36px;padding:34px 56px 56px;">
+          <div style="display:flex;gap:32px;">
+            <div style="display:flex;flex-direction:column;gap:2px;">
+              <span style="font-family:'Caprasimo',serif;font-size:34px;color:var(--bone);">2011</span>
+              <span style="font-size:12.5px;color:var(--muted);">est. at a British university</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:2px;">
+              <span style="font-family:'Caprasimo',serif;font-size:34px;color:var(--red-300);">320,000</span>
+              <span style="font-size:12.5px;color:var(--muted);">members worldwide</span>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:2px;">
+              <span style="font-family:'Caprasimo',serif;font-size:34px;color:var(--bone);">15</span>
+              <span style="font-size:12.5px;color:var(--muted);">years of applied research</span>
+            </div>
+          </div>
+          <div style="flex:1;display:flex;align-items:center;justify-content:space-between;gap:28px;background:rgba(212,43,39,0.1);border:1px solid rgba(212,43,39,0.3);border-radius:999px;padding:20px 36px;">
+            <p style="font-family:'Caprasimo',serif;font-size:18px;margin:0;color:var(--bone);">"A currency of non-financial value at parity with financial currency."</p>
+            <a href="#" style="text-decoration:none;background:var(--red);color:#fff;border-radius:999px;padding:11px 24px;font-size:14px;font-weight:700;flex:none;">Become a member</a>
+          </div>
+        </div>
+        <footer style="display:flex;align-items:center;justify-content:space-between;padding:22px 56px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted);">
+          <span>© 2026 Centre for Citizenship, Enterprise and Governance</span>
+          <span>info@cceg.org.uk · +44 1443 315343</span>
+        </footer>
+      </div>
+    </div>
+  </div>
+</body></html>

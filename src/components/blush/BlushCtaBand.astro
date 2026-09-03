@@ -1,0 +1,73 @@
+---
+
+---
+
+<section class="cta-band" id="join" aria-label="Membership">
+  <div class="cta-inner reveal">
+    <span class="dot c1" aria-hidden="true"></span>
+    <span class="dot c2" aria-hidden="true"></span>
+    <span class="dot c3" aria-hidden="true"></span>
+    <span class="dot c4" aria-hidden="true"></span>
+    <span class="chip chip-red tilt">join us</span>
+    <h2>Ready to make the intangible tangible?</h2>
+    <p>Join 320,000 members putting non-financial value to work in the real economy.</p>
+    <div class="cta-actions">
+      <a href="#" class="btn btn-solid">Become a member</a>
+      <a href="mailto:info@cceg.org.uk" class="btn btn-ghost">Talk to us</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-band {
+    padding: 8px var(--pad) 76px;
+  }
+  .cta-inner {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: clamp(40px, 6vw, 68px) clamp(24px, 5vw, 60px);
+    border-radius: 40px;
+    background:
+      radial-gradient(ellipse 700px 360px at 22% 0%, #ffd9e0, transparent 65%),
+      linear-gradient(135deg, var(--pink-50), #ffe0e6);
+  }
+  .dot {
+    position: absolute;
+    border-radius: 50%;
+  }
+  .c1 { left: 64px; top: 52px; width: 12px; height: 12px; background: var(--salmon); }
+  .c2 { right: 110px; top: 76px; width: 9px; height: 9px; background: var(--peach); }
+  .c3 { left: 180px; bottom: 60px; width: 8px; height: 8px; background: var(--rose); }
+  .c4 { right: 70px; bottom: 90px; width: 14px; height: 14px; background: var(--pink-200); }
+  .tilt {
+    transform: rotate(-2.5deg);
+  }
+  .cta-inner h2 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(28px, 4vw, 46px);
+    line-height: 1.08;
+    color: var(--ink);
+    max-width: 680px;
+  }
+  .cta-inner p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 460px;
+    color: var(--muted-deep);
+  }
+  .cta-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 6px;
+  }
+</style>

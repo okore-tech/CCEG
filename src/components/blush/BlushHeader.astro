@@ -1,0 +1,402 @@
+---
+const menuLinks = [
+  { label: 'iRWA', href: '#', active: true },
+  { label: 'Genome of Values', href: '#' },
+  { label: 'Research', href: '#' },
+  { label: 'Education', href: '#' },
+  { label: 'Leadership', href: '#' },
+  { label: 'Advisory Board', href: '#' },
+  { label: 'Contact', href: '#contact' },
+];
+---
+
+<header class="blush-header">
+  <a href="/blush/" class="brand-lockup" aria-label="CCEG home">
+    <span class="brand-mark" aria-hidden="true">
+      <span class="mark-gas"></span>
+      <span class="mark-solid"></span>
+      <span class="mark-dot"></span>
+    </span>
+    <span class="brand-word">CCEG</span>
+  </a>
+
+  <div class="header-right">
+    <a href="#join" class="join-chip">Join 320,000 members</a>
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="blush-menu"
+      aria-label="Menu"
+    >
+      <span class="menu-toggle-word" aria-hidden="true">menu</span>
+      <span class="menu-toggle-icon" aria-hidden="true"><i></i><i></i></span>
+    </button>
+  </div>
+</header>
+
+<div class="menu-overlay" id="blush-menu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <div class="menu-dots" aria-hidden="true">
+    <span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span>
+    <span class="dot d4"></span><span class="dot d5"></span>
+  </div>
+  <div class="menu-top">
+    <span class="menu-hint">intangible until you choose it</span>
+    <button class="menu-close" type="button" aria-label="Close menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"></line><line x1="19" y1="5" x2="5" y2="19"></line></svg>
+    </button>
+  </div>
+  <nav class="menu-nav" aria-label="Primary">
+    {
+      menuLinks.map((link, i) => (
+        <a
+          href={link.href}
+          class:list={['menu-link', { 'is-active': link.active }]}
+          style={`--i: ${i}`}
+          aria-current={link.active ? 'page' : undefined}
+        >
+          <span class="menu-num">{String(i + 1).padStart(2, '0')}</span>
+          <span class="menu-word">{link.label}</span>
+        </a>
+      ))
+    }
+  </nav>
+  <div class="menu-foot">
+    <div class="menu-foot-links">
+      <a href="#">Members' area</a>
+      <a href="#">Social Value &amp; Intangibles Review</a>
+    </div>
+    <span class="menu-foot-contact">info@cceg.org.uk · +44 1443 315343</span>
+  </div>
+</div>
+
+<style>
+  .blush-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 14px var(--pad);
+    background: rgba(255, 251, 250, 0.82);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .brand-lockup {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+  .brand-mark {
+    position: relative;
+    display: block;
+    width: 44px;
+    height: 39px;
+    flex: none;
+  }
+  .mark-gas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 38% 35%, #ffc9d2, #f0857f 62%, transparent 76%);
+    filter: blur(3px);
+    opacity: 0.9;
+  }
+  .mark-solid {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #e8433c, #9c1815);
+  }
+  .mark-dot {
+    position: absolute;
+    right: 9px;
+    bottom: 9px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--paper);
+  }
+  .brand-word {
+    font: 800 24px/1 var(--font-body);
+    letter-spacing: 0.02em;
+    color: var(--ink);
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .join-chip {
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--red);
+    padding: 12px 2px;
+  }
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    background: #ffffff;
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    padding: 11px 20px;
+    font: 800 13px/1 var(--font-body);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+    transition:
+      background-color 0.2s ease-out,
+      color 0.2s ease-out,
+      transform 0.2s ease-out;
+  }
+  .menu-toggle:hover {
+    background: var(--ink);
+    color: var(--paper);
+    transform: translateY(-1px);
+  }
+  .menu-toggle-word {
+    display: block;
+  }
+  .menu-toggle-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .menu-toggle-icon i {
+    display: block;
+    width: 16px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+  }
+
+  /* ---------- The menu: intangible until you choose it ---------- */
+  .menu-overlay[hidden] {
+    display: none;
+  }
+  .menu-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    display: flex;
+    flex-direction: column;
+    padding: 20px var(--pad) 28px;
+    background:
+      radial-gradient(ellipse 800px 520px at 15% 8%, #ffe4e9, transparent 70%),
+      radial-gradient(ellipse 700px 480px at 90% 90%, #ffe9d9, transparent 65%),
+      var(--paper-2);
+    overflow-y: auto;
+  }
+  .menu-dots {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .dot {
+    position: absolute;
+    border-radius: 50%;
+  }
+  .d1 { left: 12%; top: 18%; width: 12px; height: 12px; background: var(--salmon); }
+  .d2 { right: 16%; top: 12%; width: 9px; height: 9px; background: var(--peach); }
+  .d3 { left: 22%; bottom: 20%; width: 8px; height: 8px; background: var(--rose); }
+  .d4 { right: 24%; bottom: 26%; width: 12px; height: 12px; background: var(--pink-200); }
+  .d5 { right: 40%; top: 30%; width: 7px; height: 7px; background: var(--pink-300); }
+
+  .menu-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .menu-hint {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: var(--muted);
+  }
+  .menu-close {
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid var(--ink);
+    background: #ffffff;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+      background-color 0.2s ease-out,
+      color 0.2s ease-out,
+      transform 0.25s ease-out;
+  }
+  .menu-close:hover {
+    background: var(--ink);
+    color: var(--paper);
+    transform: rotate(90deg);
+  }
+
+  .menu-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(2px, 1vh, 10px);
+    margin: auto 0;
+    padding: 24px 0;
+  }
+  .menu-link {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    text-decoration: none;
+    opacity: 1;
+  }
+  .menu-num {
+    font: 800 12px/1 var(--font-body);
+    letter-spacing: 0.1em;
+    color: var(--rose);
+    transform: translateY(-6px);
+  }
+  .menu-word {
+    font-family: var(--font-display);
+    font-size: clamp(38px, 6.4vh, 68px);
+    line-height: 1.12;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--ghost);
+    transition:
+      color 0.25s ease-out,
+      -webkit-text-stroke-color 0.25s ease-out,
+      transform 0.25s ease-out;
+  }
+  .menu-link:hover {
+    opacity: 1;
+  }
+  .menu-link:hover .menu-word,
+  .menu-link:focus-visible .menu-word {
+    color: var(--red);
+    -webkit-text-stroke-color: transparent;
+    transform: rotate(-1.2deg);
+  }
+  .menu-link.is-active .menu-word {
+    color: var(--ink);
+    -webkit-text-stroke-color: transparent;
+  }
+
+  .menu-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+    border-top: 1.5px solid var(--pink-200);
+    padding-top: 18px;
+  }
+  .menu-foot-links {
+    display: flex;
+    gap: 22px;
+  }
+  .menu-foot a {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--muted-deep);
+    padding: 8px 0;
+  }
+  .menu-foot-contact {
+    font-size: 13px;
+    color: var(--muted-deep);
+  }
+
+  /* Open/close choreography */
+  .menu-overlay.open {
+    animation: overlayIn 0.3s ease-out;
+  }
+  .menu-overlay.open .menu-link {
+    animation: linkIn 0.45s ease-out backwards;
+    animation-delay: calc(60ms + var(--i) * 55ms);
+  }
+  @keyframes overlayIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes linkIn {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 640px) {
+    .join-chip {
+      display: none;
+    }
+    .menu-word {
+      font-size: clamp(34px, 5.6vh, 52px);
+      -webkit-text-stroke-width: 1.6px;
+    }
+    .menu-foot {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .menu-overlay.open,
+    .menu-overlay.open .menu-link {
+      animation: none;
+    }
+    .menu-close:hover {
+      transform: none;
+    }
+    .menu-link:hover .menu-word,
+    .menu-link:focus-visible .menu-word {
+      transform: none;
+    }
+  }
+</style>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle')!;
+  const overlay = document.querySelector<HTMLElement>('.menu-overlay')!;
+  const closeBtn = overlay.querySelector<HTMLButtonElement>('.menu-close')!;
+
+  const openMenu = () => {
+    overlay.hidden = false;
+    overlay.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  };
+  const closeMenu = (returnFocus = true) => {
+    overlay.classList.remove('open');
+    overlay.hidden = true;
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    if (returnFocus) toggle.focus();
+  };
+
+  toggle.addEventListener('click', openMenu);
+  closeBtn.addEventListener('click', () => closeMenu());
+  overlay.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => closeMenu(false));
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !overlay.hidden) closeMenu();
+  });
+</script>

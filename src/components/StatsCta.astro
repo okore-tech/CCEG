@@ -1,0 +1,98 @@
+---
+const stats = [
+  { number: '2011', label: 'est. at a British university' },
+  { number: '320,000', countup: 320000, label: 'members worldwide', highlight: true },
+  { number: '15', countup: 15, label: 'years of applied research' },
+];
+---
+
+<section class="stats-cta">
+  <div class="stats">
+    {
+      stats.map((stat, i) => (
+        <div class="stat reveal" style={`--reveal-delay: ${i * 40}`}>
+          <span
+            class:list={['stat-number', { 'stat-number-red': stat.highlight }]}
+            data-countup={stat.countup}
+          >
+            {stat.number}
+          </span>
+          <span class="stat-label">{stat.label}</span>
+        </div>
+      ))
+    }
+  </div>
+  <div class="quote-pill reveal" style="--reveal-delay: 120">
+    <p>"A currency of non-financial value at parity with financial currency."</p>
+    <a href="#join" class="btn btn-solid btn-small">Become a member</a>
+  </div>
+</section>
+
+<style>
+  .stats-cta {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    padding: 34px var(--pad) 56px;
+  }
+  .stats {
+    display: flex;
+    gap: 32px;
+  }
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .stat-number {
+    font-family: var(--font-display);
+    font-size: 34px;
+    color: var(--bone);
+  }
+  .stat-number-red {
+    color: var(--ember);
+  }
+  .stat-label {
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .stat-number[data-countup] {
+    font-variant-numeric: tabular-nums;
+  }
+  .quote-pill {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    background: rgba(232, 221, 210, 0.06);
+    border: 1px solid rgba(232, 221, 210, 0.22);
+    border-radius: 999px;
+    padding: 20px 36px;
+  }
+  .quote-pill p {
+    font-family: var(--font-display);
+    font-size: 18px;
+    margin: 0;
+    color: var(--bone);
+  }
+
+  @media (max-width: 900px) {
+    .stats-cta {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 28px;
+    }
+    .stats {
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .quote-pill {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+      border-radius: 28px;
+      padding: 24px 28px;
+    }
+  }
+</style>

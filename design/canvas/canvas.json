@@ -1,0 +1,17 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 1440, "h": 2400, "title": "Desktop — Blush" },
+    { "file": "Mobile.dc.html", "x": 1540, "y": 0, "w": 390, "h": 3000, "title": "Mobile — Blush" },
+    { "file": "StickerHero.dc.html", "x": 0, "y": 2560, "w": 1440, "h": 780, "title": "Alt hero — Sticker collage" }
+  ],
+  "annotations": [
+    {
+      "id": "blush-direction",
+      "x": -420,
+      "y": 0,
+      "w": 340,
+      "text": "Blush direction: light pink-to-white ground, crimson demoted to CTAs and the word 'tangible.'\nFun via sticker chips, tilted cards, hard pink shadows, doodle arrows and the ticker band.\nThe accent tweak on the desktop artboard swaps the crimson family in one move.\nAlt hero below trades the split layout for a centred sticker collage — louder, less room for copy."
+    }
+  ],
+  "launch": { "view": "canvas" }
+}

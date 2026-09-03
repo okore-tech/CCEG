@@ -1,0 +1,42 @@
+---
+const links = [
+  { label: "Members' area", href: '#' },
+  { label: 'Social Value & Intangibles Review', href: '#' },
+];
+---
+
+<div class="utility-bar">
+  {links.map((link) => <a href={link.href} class="utility-link">{link.label}</a>)}
+  <a href="#join" class="utility-join">Join 320,000 members</a>
+</div>
+
+<style>
+  .utility-bar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 18px;
+    padding: 8px var(--pad);
+    background: rgba(27, 25, 26, 0.7);
+    font-size: 12px;
+  }
+  .utility-bar a {
+    color: var(--muted);
+    text-decoration: none;
+    padding: 4px 0;
+  }
+  .utility-bar .utility-join {
+    color: var(--red-300);
+    font-weight: 700;
+  }
+
+  /* Below the nav breakpoint the secondary links move into the menu;
+     only the Join CTA stays, with a comfortable tap area */
+  @media (max-width: 1100px) {
+    .utility-link {
+      display: none;
+    }
+    .utility-bar a {
+      padding: 8px 0;
+    }
+  }
+</style>

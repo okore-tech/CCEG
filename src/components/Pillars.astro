@@ -1,0 +1,130 @@
+---
+const pillars = [
+  {
+    key: 'research',
+    title: '01 · Research',
+    desc: 'the science of how non-financial value behaves',
+  },
+  {
+    key: 'measurement',
+    title: '02 · Measurement',
+    desc: 'a number where there was a feeling',
+  },
+  {
+    key: 'transactions',
+    title: '03 · Transactions',
+    desc: 'blockchain gives measured value permanence',
+  },
+  {
+    key: 'implementation',
+    title: '04 · Implementation',
+    desc: 'retail · corporate · government — value in the real economy',
+  },
+];
+---
+
+<section class="pillars" id="what-we-do" aria-label="What we do" data-animate-scope>
+  {
+    pillars.map((pillar, i) => (
+      <div class={`pillar pillar-${pillar.key} reveal`} style={`--reveal-delay: ${i * 60}`}>
+        <h2>{pillar.title}</h2>
+        <p>{pillar.desc}</p>
+      </div>
+    ))
+  }
+</section>
+
+<style>
+  .pillars {
+    padding: 34px var(--pad) 8px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    align-items: center;
+  }
+  .pillar {
+    justify-self: center;
+    width: 212px;
+    height: 212px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    text-align: center;
+    padding: 26px;
+  }
+  .pillar h2 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 15px;
+  }
+  .pillar p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+  .pillar-research {
+    border: 3px dashed rgba(160, 151, 147, 0.6);
+    animation: ringfill 8s ease-in-out infinite;
+  }
+  .pillar-research h2,
+  .pillar-research p {
+    color: var(--muted);
+  }
+  .pillar-measurement {
+    background: rgba(232, 221, 210, 0.1);
+  }
+  .pillar-measurement h2,
+  .pillar-measurement p {
+    color: var(--bone);
+  }
+  .pillar-transactions {
+    background: rgba(212, 43, 39, 0.08);
+    border: 2px solid rgba(212, 43, 39, 0.55);
+  }
+  .pillar-transactions h2 {
+    color: var(--red-300);
+  }
+  .pillar-transactions p {
+    color: var(--muted);
+  }
+  .pillar-implementation {
+    background: var(--red);
+    box-shadow: 0 14px 34px rgba(212, 43, 39, 0.4);
+    animation: coinpop 8s ease-in-out infinite;
+  }
+  .pillar-implementation h2 {
+    color: #fff;
+  }
+  .pillar-implementation p {
+    /* white on --red measures 5.0:1 (AA); #ffd9d5 was 3.9:1 */
+    color: #ffffff;
+  }
+
+  @media (max-width: 900px) {
+    .pillars {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 24px;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .pillars {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pillar-research {
+      animation: none;
+      border-style: solid;
+      opacity: 1;
+    }
+    .pillar-implementation {
+      animation: none;
+    }
+  }
+</style>

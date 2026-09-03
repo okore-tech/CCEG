@@ -1,0 +1,124 @@
+---
+const badges = [
+  "World's leading think tank on non-financial value",
+  'est. 2011',
+  '320,000 members',
+];
+---
+
+<section class="hero">
+  <p class="hero-badges">
+    {badges.map((badge) => <span class="badge">{badge}</span>)}
+  </p>
+  <h1 class="hero-title">
+    <span class="hero-line">We made the</span>
+    <span class="hero-line hero-line-2">
+      <span class="word-ghost" aria-hidden="true">
+        <span class="seg d1">int</span><span class="seg d2">ang</span><span class="seg d3">ib</span><span class="seg d4">le</span>
+      </span>
+      <span class="sr-only">intangible</span>
+      <span class="word-solid">tangible.</span>
+    </span>
+  </h1>
+  <p class="hero-copy">
+    The value everyone feels and no one could hold — researched, measured by sentiment, transacted
+    on blockchain, implemented in the real economy. Watch it become something you can hold.
+  </p>
+  <div class="hero-actions">
+    <a href="#what-we-do" class="btn btn-solid">Discover iRWA</a>
+    <a href="#approach" class="btn btn-ghost">The Genome of Values</a>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding: 60px var(--pad) 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    align-items: flex-start;
+    max-width: calc(1010px + var(--pad) * 2);
+  }
+  .hero-badges {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .badge {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--bone);
+    border: 1px solid rgba(232, 221, 210, 0.28);
+    background: rgba(232, 221, 210, 0.06);
+    border-radius: 999px;
+    padding: 7px 14px;
+  }
+  .hero-title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(44px, 6.7vw, 96px);
+    line-height: 1.03;
+    letter-spacing: -0.01em;
+    color: var(--text);
+  }
+  .hero-line {
+    display: block;
+  }
+  .hero-line-2 {
+    display: flex;
+    align-items: baseline;
+    gap: clamp(14px, 2.2vw, 32px);
+    flex-wrap: wrap;
+  }
+  .word-ghost {
+    color: transparent;
+    -webkit-text-stroke: 2.5px rgba(232, 221, 210, 0.4);
+    display: inline-flex;
+  }
+  /* The headline plays twice, then settles: outline holds, "tangible." stays solid */
+  .word-ghost .d1 { animation: dissolve 6s ease-in-out 2; }
+  .word-ghost .d2 { animation: dissolve 6s ease-in-out 0.9s 2; }
+  .word-ghost .d3 { animation: dissolve 6s ease-in-out 0.4s 2; }
+  .word-ghost .d4 { animation: dissolve 6s ease-in-out 1.3s 2; }
+  .word-solid {
+    --stroke-soft: rgba(232, 221, 210, 0.4);
+    --solid: #d42b27;
+    animation: solidify 6s ease-in-out 2 forwards;
+  }
+  .hero-copy {
+    font-size: 17px;
+    line-height: 1.65;
+    max-width: 580px;
+    color: var(--muted);
+    margin: 0;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 560px) {
+    .hero {
+      padding-top: 44px;
+    }
+    .word-ghost {
+      -webkit-text-stroke-width: 1.5px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .word-ghost .seg {
+      animation: none;
+    }
+    .word-solid {
+      animation: none;
+      color: var(--solid);
+      -webkit-text-stroke: 0 transparent;
+    }
+  }
+</style>

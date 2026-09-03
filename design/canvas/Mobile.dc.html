@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caprasimo&amp;family=Figtree:wght@400;600;700;800&amp;display=swap">
+  <style>
+    body { margin: 0; background: #fffbfa; font-family: 'Figtree', system-ui, sans-serif; }
+    a { color: #b23a48; } a:hover { color: #8f2b37; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .ticker-track { display: flex; gap: 40px; width: max-content; animation: ticker 30s linear infinite; }
+    @media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; } }
+  </style>
+</helmet>
+<div style="width: 390px; background: #fffbfa; color: #3a2226; font-family: 'Figtree', system-ui, sans-serif;">
+
+  <!-- Utility strip -->
+  <div style="display: flex; justify-content: center; padding: 10px 20px; background: #ffffff; border-bottom: 1px solid #ffe4e8; font-size: 12px;">
+    <a href="#" style="color: #b23a48; text-decoration: none; font-weight: 700;">Join 320,000 members</a>
+  </div>
+
+  <!-- Header -->
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; background: rgba(255, 251, 250, 0.9); border-bottom: 1px solid #ffe4e8;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <div style="position: relative; width: 36px; height: 32px;">
+        <div style="position: absolute; left: 0px; top: 0px; width: 22px; height: 22px; border-radius: 50%; background: radial-gradient(circle at 38% 35%, #ffc9d2, #f0857f 62%, transparent 76%); filter: blur(2px); opacity: 0.9;"></div>
+        <div style="position: absolute; right: 0px; bottom: 0px; width: 20px; height: 20px; border-radius: 7px; background: linear-gradient(135deg, #e8433c, #9c1815);"></div>
+        <div style="position: absolute; right: 7px; bottom: 7px; width: 4px; height: 4px; border-radius: 50%; background: #fffbfa;"></div>
+      </div>
+      <span style="font: 800 20px/1 'Figtree', sans-serif; letter-spacing: 0.02em; color: #3a2226;">CCEG</span>
+    </div>
+    <div style="width: 46px; height: 44px; border: 1.5px solid #ffd0d8; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; background: #ffffff;">
+      <span style="display: block; width: 18px; height: 2px; background: #3a2226; border-radius: 2px;"></span>
+      <span style="display: block; width: 18px; height: 2px; background: #3a2226; border-radius: 2px;"></span>
+      <span style="display: block; width: 18px; height: 2px; background: #3a2226; border-radius: 2px;"></span>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div style="position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 20px; padding: 40px 20px 36px; background: radial-gradient(ellipse 420px 320px at 10% 0%, #ffeef1, transparent 70%), #fffbfa; overflow: hidden;">
+    <div style="position: absolute; right: 34px; top: 30px; width: 8px; height: 8px; border-radius: 50%; background: #ffc9d2;"></div>
+    <div style="position: absolute; right: 70px; top: 200px; width: 6px; height: 6px; border-radius: 50%; background: #ffb27a;"></div>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+      <span style="display: inline-block; transform: rotate(-3deg); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 800; color: #3a2226; background: #ffdfe4; border-radius: 999px; padding: 7px 13px;">est. 2011</span>
+      <span style="display: inline-block; transform: rotate(2deg); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 800; color: #3a2226; background: #f0857f; border-radius: 999px; padding: 7px 13px;">320,000 members</span>
+    </div>
+    <div style="font-family: 'Caprasimo', Georgia, serif; font-size: 46px; line-height: 1.05; color: #3a2226;">
+      <div>We made the</div>
+      <div style="color: transparent; -webkit-text-stroke: 2px #d96b7e;">intangible</div>
+      <div style="position: relative; display: inline-block; color: #d42b27;">tangible.
+        <svg viewBox="0 0 220 20" style="position: absolute; left: 2px; bottom: -10px; width: 100%; height: 16px;" aria-hidden="true"><path d="M4 12 q 14 -10 28 0 t 28 0 t 28 0 t 28 0 t 28 0 t 28 0 t 28 0" fill="none" stroke="#d42b27" stroke-width="5" stroke-linecap="round"></path></svg>
+      </div>
+    </div>
+    <p style="font-size: 15px; line-height: 1.6; color: #82636a; margin: 6px 0 0;">The value everyone feels and no one could hold — researched, measured, transacted, implemented. Watch it become something you can hold.</p>
+    <div style="display: flex; flex-direction: column; gap: 12px; align-self: stretch;">
+      <a href="#" style="text-decoration: none; text-align: center; background: #d42b27; color: #ffffff; border-radius: 999px; padding: 15px 24px; font-size: 15px; font-weight: 700; box-shadow: 0 6px 0 #ffd0d8;">Discover iRWA</a>
+      <a href="#" style="text-decoration: none; text-align: center; border: 2px solid #3a2226; color: #3a2226; background: #ffffff; border-radius: 999px; padding: 13px 24px; font-size: 15px; font-weight: 700;">The Genome of Values</a>
+    </div>
+    <div style="align-self: center; display: flex; align-items: center; gap: 14px; margin-top: 10px;">
+      <span style="transform: rotate(-4deg); font-family: 'Caprasimo', Georgia, serif; font-size: 20px; color: #e8566d; background: #ffffff; border: 2px solid #ffd0d8; border-radius: 999px; padding: 7px 16px;">love</span>
+      <svg viewBox="0 0 60 24" style="width: 44px; height: 20px;" aria-hidden="true">
+        <path d="M4 14 C 20 6, 34 6, 50 12" fill="none" stroke="#f0857f" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 7"></path>
+        <path d="M43 6 L 52 12 L 42 17" fill="none" stroke="#f0857f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+        <div style="width: 62px; height: 62px; border-radius: 18px; background: #d42b27; box-shadow: 0 7px 0 #ffd0d8; display: flex; align-items: center; justify-content: center; transform: rotate(3deg);">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"></path><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"></path><line x1="6" y1="2" x2="6" y2="4"></line><line x1="10" y1="2" x2="10" y2="4"></line><line x1="14" y1="2" x2="14" y2="4"></line></svg>
+        </div>
+        <span style="font-size: 11.5px; font-weight: 800; color: #3a2226; background: #ffdfe4; border-radius: 999px; padding: 5px 10px;">became a coffee</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ticker band -->
+  <div style="background: #d42b27; padding: 14px 0; overflow: hidden; transform: rotate(-1.4deg); margin: 6px -4px 0;">
+    <div class="ticker-track">
+      <span style="font-family: 'Caprasimo', Georgia, serif; font-size: 16px; color: #ffffff; white-space: nowrap;">love became a coffee&nbsp;&nbsp;·&nbsp;&nbsp;trust became a home&nbsp;&nbsp;·&nbsp;&nbsp;care became a meal&nbsp;&nbsp;·&nbsp;&nbsp;purpose became a pension&nbsp;&nbsp;·</span>
+      <span style="font-family: 'Caprasimo', Georgia, serif; font-size: 16px; color: #ffffff; white-space: nowrap;">love became a coffee&nbsp;&nbsp;·&nbsp;&nbsp;trust became a home&nbsp;&nbsp;·&nbsp;&nbsp;care became a meal&nbsp;&nbsp;·&nbsp;&nbsp;purpose became a pension&nbsp;&nbsp;·</span>
+    </div>
+  </div>
+
+  <!-- Process -->
+  <div style="padding: 48px 20px 30px; display: flex; flex-direction: column; gap: 22px;">
+    <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px;">
+      <span style="transform: rotate(-2deg); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 800; color: #3a2226; background: #f0857f; border-radius: 999px; padding: 6px 12px;">how it works</span>
+      <h2 style="margin: 0; font-family: 'Caprasimo', Georgia, serif; font-weight: 400; font-size: 30px; color: #3a2226;">From feeling to holding</h2>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 18px;">
+      <div style="display: flex; gap: 16px; align-items: flex-start; background: #ffffff; border: 2px solid #ffd7dd; border-radius: 22px; padding: 20px; transform: rotate(-0.8deg); box-shadow: 0 8px 0 #ffe4e8;">
+        <span style="font-family: 'Caprasimo', Georgia, serif; font-size: 34px; color: #e8566d; flex: none;">01</span>
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          <span style="font-size: 15px; font-weight: 800; color: #3a2226;">Research</span>
+          <span style="font-size: 13.5px; line-height: 1.5; color: #82636a;">the science of how non-financial value behaves</span>
+        </div>
+      </div>
+      <div style="display: flex; gap: 16px; align-items: flex-start; background: #ffeef1; border: 2px solid #ffd7dd; border-radius: 22px; padding: 20px; transform: rotate(0.8deg); box-shadow: 0 8px 0 #ffd7dd;">
+        <span style="font-family: 'Caprasimo', Georgia, serif; font-size: 34px; color: #c94b5e; flex: none;">02</span>
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          <span style="font-size: 15px; font-weight: 800; color: #3a2226;">Measurement</span>
+          <span style="font-size: 13.5px; line-height: 1.5; color: #82636a;">a number where there was a feeling, via sentiment analysis</span>
+        </div>
+      </div>
+      <div style="display: flex; gap: 16px; align-items: flex-start; background: #ffffff; border: 2px solid #d42b27; border-radius: 22px; padding: 20px; transform: rotate(-0.6deg); box-shadow: 0 8px 0 #ffd0d8;">
+        <span style="font-family: 'Caprasimo', Georgia, serif; font-size: 34px; color: #d42b27; flex: none;">03</span>
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          <span style="font-size: 15px; font-weight: 800; color: #3a2226;">Transactions</span>
+          <span style="font-size: 13.5px; line-height: 1.5; color: #82636a;">blockchain gives measured value permanence</span>
+        </div>
+      </div>
+      <div style="display: flex; gap: 16px; align-items: flex-start; background: #d42b27; border-radius: 22px; padding: 20px; transform: rotate(0.8deg); box-shadow: 0 8px 0 #ffb3bd;">
+        <span style="font-family: 'Caprasimo', Georgia, serif; font-size: 34px; color: #ffd0d8; flex: none;">04</span>
+        <div style="display: flex; flex-direction: column; gap: 4px;">
+          <span style="font-size: 15px; font-weight: 800; color: #ffffff;">Implementation</span>
+          <span style="font-size: 13.5px; line-height: 1.5; color: #ffffff;">retail · corporate · government — value in the real economy</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div style="padding: 14px 20px 40px; display: flex; flex-direction: column; gap: 16px;">
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px;">
+      <div style="display: flex; flex-direction: column; gap: 2px; background: #ffffff; border: 2px solid #ffe4e8; border-radius: 18px; padding: 16px 18px; transform: rotate(-1.5deg); box-shadow: 0 6px 0 #ffeef1;">
+        <span style="font-family: 'Caprasimo', Georgia, serif; font-size: 28px; color: #3a2226;">2011</span>
+        <span style="font-size: 12.5px; color: #82636a;">est. at a British university</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 2px; background: #ffdfe4; border-radius: 18px; padding: 16px 18px; transform: rotate(1.2deg); box-shadow: 0 6px 0 #ffc9d2;">
+        <span style="font-family: 'Caprasimo', Georgia, serif; font-size: 28px; color: #d42b27;">320,000</span>
+        <span style="font-size: 12.5px; color: #6d4f56;">members worldwide</span>
+      </div>
+      <div style="grid-column: span 2; display: flex; flex-direction: column; gap: 2px; background: #ffffff; border: 2px solid #ffe4e8; border-radius: 18px; padding: 16px 18px; transform: rotate(-0.6deg); box-shadow: 0 6px 0 #ffeef1;">
+        <span style="font-family: 'Caprasimo', Georgia, serif; font-size: 28px; color: #3a2226;">15</span>
+        <span style="font-size: 12.5px; color: #82636a;">years of applied research</span>
+      </div>
+    </div>
+    <div style="position: relative; background: #ffffff; border: 2px solid #ffd7dd; border-radius: 20px; padding: 20px 22px;">
+      <p style="font-family: 'Caprasimo', Georgia, serif; font-size: 16px; line-height: 1.5; margin: 0; color: #3a2226;">"A currency of non-financial value at parity with financial currency."</p>
+      <div style="position: absolute; left: 34px; bottom: -12px; width: 20px; height: 20px; background: #ffffff; border-right: 2px solid #ffd7dd; border-bottom: 2px solid #ffd7dd; transform: rotate(45deg);"></div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div style="padding: 4px 20px 44px;">
+    <div style="position: relative; overflow: hidden; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 40px 24px; border-radius: 28px; background: radial-gradient(ellipse 320px 220px at 20% 0%, #ffd9e0, transparent 65%), linear-gradient(135deg, #ffeef1, #ffe0e6);">
+      <div style="position: absolute; left: 26px; top: 26px; width: 9px; height: 9px; border-radius: 50%; background: #f0857f;"></div>
+      <div style="position: absolute; right: 32px; top: 60px; width: 7px; height: 7px; border-radius: 50%; background: #ffb27a;"></div>
+      <div style="position: absolute; right: 60px; bottom: 40px; width: 10px; height: 10px; border-radius: 50%; background: #ffc9d2;"></div>
+      <span style="transform: rotate(-2.5deg); font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 800; color: #ffffff; background: #d42b27; border-radius: 999px; padding: 7px 14px;">join us</span>
+      <h2 style="margin: 0; font-family: 'Caprasimo', Georgia, serif; font-weight: 400; font-size: 28px; line-height: 1.12; color: #3a2226;">Ready to make the intangible tangible?</h2>
+      <p style="margin: 0; font-size: 14px; line-height: 1.55; color: #82636a;">Join 320,000 members putting non-financial value to work.</p>
+      <a href="#" style="text-decoration: none; align-self: stretch; text-align: center; background: #d42b27; color: #ffffff; border-radius: 999px; padding: 15px 24px; font-size: 15px; font-weight: 700; box-shadow: 0 6px 0 #ffc9d2; margin-top: 6px;">Become a member</a>
+      <a href="#" style="text-decoration: none; align-self: stretch; text-align: center; border: 2px solid #3a2226; color: #3a2226; background: #ffffff; border-radius: 999px; padding: 13px 24px; font-size: 15px; font-weight: 700;">Talk to us</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="display: flex; flex-direction: column; gap: 6px; padding: 20px; border-top: 1px solid #ffe4e8; font-size: 12.5px; color: #82636a; background: #ffffff;">
+    <span>© 2026 Centre for Citizenship, Enterprise and Governance</span>
+    <span>info@cceg.org.uk · +44 1443 315343</span>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

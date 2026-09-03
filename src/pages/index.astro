@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import UtilityBar from '../components/UtilityBar.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import Hero from '../components/Hero.astro';
+import FlowBand from '../components/FlowBand.astro';
+import Pillars from '../components/Pillars.astro';
+import StatsCta from '../components/StatsCta.astro';
+import CtaBand from '../components/CtaBand.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+---
+
+<BaseLayout>
+  <UtilityBar />
+  <SiteHeader />
+  <main>
+    <Hero />
+    <FlowBand />
+    <Pillars />
+    <StatsCta />
+    <CtaBand />
+  </main>
+  <SiteFooter />
+</BaseLayout>
