@@ -1,0 +1,143 @@
+---
+const milestones = [
+  {
+    year: '2011',
+    text: 'Our Intangible Real World Assets (iRWA) movement formally started in 2011 and was set to deliver for 2030.',
+    done: true,
+  },
+  {
+    year: '2025',
+    text: 'We arrived 5 years ahead of schedule — iRWA delivered.',
+    done: true,
+  },
+  {
+    year: '2050',
+    text: 'Our Genome of Values (GoV) mission represents our second phase of development, with a timeline to 2050 for delivery.',
+    done: false,
+  },
+];
+---
+
+<section class="mission" id="mission" aria-label="The mission">
+  <h2>The mission</h2>
+  <p class="mission-lead">
+    We are visionaries and mission led, existential in depth, trying to change the world
+    structurally — not merely by addressing the symptoms of an imperfect society.
+  </p>
+  <div class="mission-timeline">
+    <div class="mission-track" aria-hidden="true"></div>
+    {
+      milestones.map((m, i) => (
+        <div class:list={['mission-milestone', 'reveal', { ahead: !m.done }]} style={`--reveal-delay: ${i * 60}`}>
+          <span class="milestone-year">{m.year}</span>
+          <p class="milestone-text">{m.text}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .mission {
+    padding: 0 var(--pad) var(--section-gap);
+  }
+  .mission h2 {
+    margin: 0 0 18px;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.1;
+    color: var(--text);
+  }
+  .mission-lead {
+    margin: 0 0 44px;
+    font-size: 16px;
+    line-height: 1.65;
+    max-width: 62ch;
+    color: var(--muted);
+  }
+  .mission-timeline {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding-top: 26px;
+  }
+  .mission-track {
+    position: absolute;
+    top: 5px;
+    left: 6px;
+    right: 6px;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      var(--red) 0%,
+      var(--red) 52%,
+      rgba(232, 221, 210, 0.22) 60%,
+      rgba(232, 221, 210, 0.22) 100%
+    );
+  }
+  .mission-milestone {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .mission-milestone::before {
+    content: '';
+    position: absolute;
+    top: -26px;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--red);
+  }
+  .mission-milestone.ahead::before {
+    background: var(--bg);
+    border: 2px solid rgba(232, 221, 210, 0.45);
+  }
+  .milestone-year {
+    font-family: var(--font-display);
+    font-size: 26px;
+    color: var(--bone);
+  }
+  .mission-milestone.ahead .milestone-year {
+    color: var(--red-300);
+  }
+  .milestone-text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted);
+    max-width: 34ch;
+  }
+
+  @media (max-width: 640px) {
+    .mission-timeline {
+      grid-template-columns: 1fr;
+      padding-top: 0;
+      padding-left: 26px;
+      gap: 28px;
+    }
+    .mission-track {
+      top: 6px;
+      bottom: 6px;
+      left: 5px;
+      right: auto;
+      width: 2px;
+      height: auto;
+      background: linear-gradient(
+        180deg,
+        var(--red) 0%,
+        var(--red) 52%,
+        rgba(232, 221, 210, 0.22) 60%,
+        rgba(232, 221, 210, 0.22) 100%
+      );
+    }
+    .mission-milestone::before {
+      top: 6px;
+      left: -26px;
+    }
+  }
+</style>

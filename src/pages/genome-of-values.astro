@@ -1,0 +1,479 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+// Double-helix of "values": two phase-shifted dot strands with rungs, drawn as SVG.
+const W = 520;
+const H = 640;
+const turns = 2.2;
+const steps = 34;
+const amp = 150;
+const cx = W / 2;
+const points = Array.from({ length: steps }, (_, i) => {
+  const t = i / (steps - 1);
+  const y = 40 + t * (H - 80);
+  const a = t * turns * Math.PI * 2;
+  const x1 = cx + Math.sin(a) * amp;
+  const x2 = cx + Math.sin(a + Math.PI) * amp;
+  // depth cue: dot size follows the strand's "front/back" position
+  const s1 = 4.4 + Math.cos(a) * 2.2;
+  const s2 = 4.4 + Math.cos(a + Math.PI) * 2.2;
+  return { y, x1, x2, s1, s2, rung: i % 3 === 1 };
+});
+
+const selves = [
+  { key: 'family', label: 'Family' },
+  { key: 'partner', label: 'Partner' },
+  { key: 'work', label: 'Work' },
+  { key: 'secret', label: 'Secret' },
+];
+---
+
+<BaseLayout
+  title="Genome of Values — CCEG"
+  description="The Genome of Values is CCEG's global mission to capture the values of the planet — 50 billion values by 2050 — using AI instead of proxies, with the data made accessible to all through open source."
+>
+  <SiteHeader />
+  <main>
+    <section class="gov-hero">
+      <div class="gov-hero-copy">
+        <h1>
+          <span>Genome of Values:</span>
+          <span>capturing <em>50 billion</em> values by 2050.</span>
+        </h1>
+        <p>
+          The Genome of Values project is an audacious global vision to capture the values of the
+          planet. With 8.3 billion people in the world, each with our own sets of values. On average
+          every person has at least 4 sets of values — think of it as social media presence: one for
+          our family, one for our partner, one for work, and one secret one we don't share with
+          anyone. And our values are dynamic, changing day by day, sometimes hour by hour.
+        </p>
+        <div class="gov-hero-actions">
+          <a href="mailto:info@cceg.org.uk" class="btn btn-solid">Talk to us</a>
+          <a href="/" class="btn btn-ghost">Back to CCEG</a>
+        </div>
+      </div>
+      <figure class="gov-helix" aria-hidden="true">
+        <svg viewBox={`0 0 ${W} ${H}`} role="img">
+          <g class="helix-spin">
+            {
+              points.map((p) =>
+                p.rung ? (
+                  <line x1={p.x1} y1={p.y} x2={p.x2} y2={p.y} class="rung" />
+                ) : null
+              )
+            }
+            {points.map((p, i) => <circle cx={p.x1} cy={p.y} r={p.s1} class={`dot a ${i % 4 === 0 ? 'hot' : ''}`} />)}
+            {points.map((p) => <circle cx={p.x2} cy={p.y} r={p.s2} class="dot b" />)}
+          </g>
+        </svg>
+        <figcaption class="sr-only">
+          A double helix made of dots — each dot a set of human values.
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="gov-selves" aria-label="Four sets of values per person">
+      <div class="selves-rings" aria-hidden="true">
+        {selves.map((s) => <div class={`ring ring-${s.key}`}><span>{s.label}</span></div>)}
+      </div>
+      <p class="selves-note">
+        8.3 billion people · at least 4 sets of values each · changing day by day, sometimes hour by
+        hour.
+      </p>
+    </section>
+
+    <section class="gov-shift" aria-label="From sentiment to values">
+      <div class="shift-copy">
+        <h2>From sentiment to values</h2>
+        <p>
+          The past 20 years our choices have been guided by a technology called 'Sentiment Analysis'
+          used by MAMAA — Meta, Google, Apple, Amazon, Microsoft, etc in the West; WeChat, Alibaba,
+          Baidu, etc in China. The goal of this tech: to use our hearts and minds to offer aligned
+          services and products, government census and control. We believe the next step is to
+          capture our changing values, our ideology, and to harness that power for the good of the
+          world.
+        </p>
+      </div>
+      <div class="shift-graphic" aria-hidden="true">
+        <div class="shift-era shift-past">
+          <span class="era-when">The past 20 years</span>
+          <span class="era-what">Sentiment analysis</span>
+          <span class="era-who">MAMAA · WeChat · Alibaba · Baidu</span>
+        </div>
+        <svg class="shift-arrow" viewBox="0 0 64 24" aria-hidden="true">
+          <path d="M2 12h52m0 0-9-8m9 8-9 8" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <div class="shift-era shift-next">
+          <span class="era-when">The next step</span>
+          <span class="era-what">Our changing values</span>
+          <span class="era-who">harnessed for the good of the world</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="gov-timeline" aria-label="Open source by 2050">
+      <h2>Open data, open source, by 2050</h2>
+      <p>
+        This is a project from the world's leading Think Tank on the Movement of Value, the Centre
+        for Citizenship, Enterprise and Governance — established at a UK university in 2011, now
+        independent with our 320,000 members. Eschewing proxies, we use AI to capture our values and
+        make the data accessible to all through open source by 2050.
+      </p>
+      <div class="timeline" role="img" aria-label="Timeline: 2011 CCEG established, 2025 iRWA delivered five years early, 2050 Genome of Values delivered">
+        <div class="timeline-track" aria-hidden="true"></div>
+        <div class="milestone done">
+          <span class="milestone-year">2011</span>
+          <span class="milestone-text">CCEG established at a UK university</span>
+        </div>
+        <div class="milestone done">
+          <span class="milestone-year">2025</span>
+          <span class="milestone-text">iRWA delivered — 5 years ahead of schedule</span>
+        </div>
+        <div class="milestone ahead">
+          <span class="milestone-year">2050</span>
+          <span class="milestone-text">The Genome of Values — 50 billion values, open to all</span>
+        </div>
+      </div>
+    </section>
+  </main>
+  <SiteFooter />
+</BaseLayout>
+
+<style>
+  /* ---------- Hero ---------- */
+  .gov-hero {
+    display: flex;
+    align-items: center;
+    gap: clamp(24px, 4vw, 64px);
+    padding: 56px var(--pad) clamp(48px, 6vw, 80px);
+  }
+  .gov-hero-copy {
+    flex: 1 1 55%;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    align-items: flex-start;
+  }
+  .gov-hero h1 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(38px, 5.2vw, 74px);
+    line-height: 1.06;
+    letter-spacing: -0.01em;
+    color: var(--text);
+  }
+  .gov-hero h1 span {
+    display: block;
+  }
+  .gov-hero h1 em {
+    font-style: normal;
+    color: var(--ember);
+  }
+  .gov-hero-copy > p {
+    margin: 0;
+    font-size: 16.5px;
+    line-height: 1.65;
+    max-width: 58ch;
+    color: var(--muted);
+  }
+  .gov-hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  /* ---------- Helix ---------- */
+  .gov-helix {
+    flex: 1 1 45%;
+    margin: 0;
+    max-width: 440px;
+  }
+  .gov-helix svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .helix-spin {
+    animation: helixbreathe 9s ease-in-out infinite;
+    transform-origin: 50% 50%;
+  }
+  .dot.a {
+    fill: var(--bone);
+    opacity: 0.85;
+  }
+  .dot.a.hot {
+    fill: var(--red);
+    opacity: 1;
+  }
+  .dot.b {
+    fill: var(--red-300);
+    opacity: 0.5;
+  }
+  .rung {
+    stroke: rgba(232, 221, 210, 0.16);
+    stroke-width: 1.5;
+  }
+
+  /* ---------- Four selves ---------- */
+  .gov-selves {
+    padding: 0 var(--pad) var(--section-gap);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+  }
+  .selves-rings {
+    display: flex;
+    justify-content: center;
+  }
+  .ring {
+    width: clamp(120px, 16vw, 190px);
+    height: clamp(120px, 16vw, 190px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--bone);
+  }
+  .ring + .ring {
+    margin-left: calc(clamp(120px, 16vw, 190px) * -0.22);
+  }
+  .ring-family {
+    background: rgba(232, 221, 210, 0.09);
+  }
+  .ring-partner {
+    background: rgba(212, 43, 39, 0.12);
+    border: 1px solid rgba(212, 43, 39, 0.4);
+  }
+  .ring-work {
+    background: rgba(216, 195, 165, 0.1);
+  }
+  .ring-secret {
+    border: 2px dashed rgba(160, 151, 147, 0.65);
+    color: var(--muted);
+  }
+  .selves-note {
+    margin: 0;
+    font-size: 14px;
+    color: var(--muted);
+    text-align: center;
+    max-width: 52ch;
+  }
+
+  /* ---------- Sentiment → values ---------- */
+  .gov-shift {
+    padding: 0 var(--pad) var(--section-gap);
+    display: flex;
+    align-items: center;
+    gap: clamp(28px, 4vw, 64px);
+  }
+  .shift-copy {
+    flex: 1 1 52%;
+  }
+  .gov-shift h2,
+  .gov-timeline h2 {
+    margin: 0 0 18px;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(28px, 3.6vw, 42px);
+    line-height: 1.12;
+    color: var(--text);
+  }
+  .shift-copy p {
+    margin: 0;
+    font-size: 15.5px;
+    line-height: 1.7;
+    max-width: 60ch;
+    color: var(--muted);
+  }
+  .shift-graphic {
+    flex: 1 1 48%;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .shift-era {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 24px 22px;
+    border-radius: 22px;
+  }
+  .shift-past {
+    background: rgba(232, 221, 210, 0.05);
+    border: 1px solid var(--line);
+  }
+  .shift-next {
+    background: rgba(212, 43, 39, 0.1);
+    border: 1px solid rgba(212, 43, 39, 0.45);
+  }
+  .era-when {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .era-what {
+    font-family: var(--font-display);
+    font-size: 20px;
+    color: var(--bone);
+  }
+  .shift-next .era-what {
+    color: var(--red-300);
+  }
+  .era-who {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: var(--muted);
+  }
+  .shift-arrow {
+    flex: none;
+    width: 46px;
+    color: var(--red);
+  }
+
+  /* ---------- Timeline ---------- */
+  .gov-timeline {
+    padding: 0 var(--pad) var(--section-gap);
+  }
+  .gov-timeline > p {
+    margin: 0 0 40px;
+    font-size: 15.5px;
+    line-height: 1.7;
+    max-width: 66ch;
+    color: var(--muted);
+  }
+  .timeline {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding-top: 26px;
+  }
+  .timeline-track {
+    position: absolute;
+    top: 5px;
+    left: 6px;
+    right: 6px;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      var(--red) 0%,
+      var(--red) 52%,
+      rgba(232, 221, 210, 0.22) 60%,
+      rgba(232, 221, 210, 0.22) 100%
+    );
+  }
+  .milestone {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .milestone::before {
+    content: '';
+    position: absolute;
+    top: -26px;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--red);
+  }
+  .milestone.ahead::before {
+    background: var(--bg);
+    border: 2px solid rgba(232, 221, 210, 0.45);
+  }
+  .milestone-year {
+    font-family: var(--font-display);
+    font-size: 26px;
+    color: var(--bone);
+  }
+  .milestone.ahead .milestone-year {
+    color: var(--red-300);
+  }
+  .milestone-text {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--muted);
+    max-width: 26ch;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 980px) {
+    .gov-hero {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .gov-helix {
+      align-self: center;
+      max-width: 320px;
+    }
+    .gov-shift {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .selves-rings {
+      flex-wrap: wrap;
+      row-gap: 10px;
+    }
+    .shift-graphic {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .shift-arrow {
+      transform: rotate(90deg);
+      align-self: center;
+    }
+    .timeline {
+      grid-template-columns: 1fr;
+      padding-top: 0;
+      padding-left: 26px;
+    }
+    .timeline-track {
+      top: 6px;
+      bottom: 6px;
+      left: 5px;
+      right: auto;
+      width: 2px;
+      height: auto;
+      background: linear-gradient(
+        180deg,
+        var(--red) 0%,
+        var(--red) 52%,
+        rgba(232, 221, 210, 0.22) 60%,
+        rgba(232, 221, 210, 0.22) 100%
+      );
+    }
+    .milestone::before {
+      top: 6px;
+      left: -26px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .helix-spin {
+      animation: none;
+    }
+  }
+</style>
+
+<style is:global>
+  /* Shared keyframe for this page (global so it survives Astro scoping) */
+  @keyframes helixbreathe {
+    0%,
+    100% {
+      transform: rotate(0deg) scale(1);
+    }
+    50% {
+      transform: rotate(3deg) scale(1.03);
+    }
+  }
+</style>

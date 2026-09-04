@@ -1,0 +1,233 @@
+---
+const people = [
+  {
+    role: 'Founder',
+    name: 'Olinga Taeed PhD FIoD',
+    photo: '/leadership/olinga-taeed.jpg',
+    positioning:
+      'Inventor of the Social Earnings Ratio® — which the Vatican labelled "The God Metric" — the fastest adopted social impact metric in the world.',
+    chips: [
+      "World's first Professor in Blockchain",
+      'Non-Exec Chair of c. 15 boards',
+      'First official UK ICO (2017)',
+    ],
+    bio: [
+      'Non-Exec Chair of c. 15 boards — 2 in China (Beijing, Shanghai), 2 in Vietnam (Hanoi, HCM), Switzerland, Portugal, UK, Kenya, New York',
+      'Invented the Social Earnings Ratio®, which the Vatican labelled "The God Metric", the fastest adopted social impact metric in the world',
+      "World's first Professor in Blockchain at Birmingham City University, UK",
+      'Professor in Social Enterprise at University of Northampton, UK',
+      'First official ICO in the UK (2017) completing the FCA compliance process. Finalists in the Financial Times Innovation Award',
+      'Founder of Frontiers in Blockchain, the world’s leading peer reviewed academic journal on the subject with 400+ editors',
+      'Regulator on Blockchain at the Chinese Ministry of Commerce (China Blockchain E-Commerce Committee)',
+    ],
+  },
+  {
+    role: 'CEO',
+    name: 'Barbara Taeed MBA ACIB MIRM',
+    photo: '/leadership/barbara-taeed.jpg',
+    positioning:
+      "A senior career banker specialising in payments and risk — previously responsible for the cyber security and resilience of the UK's banking infrastructure, £385bn of transactions per day.",
+    chips: ['PRA approved', 'FCA registered', '30+ years at Barclays'],
+    bio: [
+      'A senior career banker, specialising in payments and risk',
+      "Approved by the Bank of England's Prudential Regulation Authority (PRA), under the Senior Managers Regime",
+      "Payments expert, previously managing the cyber security and resilience of the UK's Banking systems infrastructure, responsible for £385bn of transactions per day",
+      'Over 30 years experience in Barclays Bank Plc managing a global portfolio of 35 million card holders in over 25 countries at Barclaycard',
+      'NED role in financial services in Building Societies ($1 billion assets)',
+      'NED role in Social Housing (6,000 houses)',
+      'FCA registered',
+    ],
+  },
+  {
+    role: 'Chair Advisory Board',
+    name: 'Tahirih Danesh PhD (law)',
+    photo: '/leadership/tahirih-danesh.jpg',
+    positioning:
+      'CEO of the leading foundation on education in Africa — a serial civic entrepreneur focused on socioeconomic rights through education and technology.',
+    chips: ['Executive Director, international foundation', 'Impact advisor to charities & startups'],
+    bio: [
+      'Currently CEO of the leading foundation on education in Africa, also an Executive Director of a niche international foundation',
+      'Focused on socioeconomic rights and development through the use of education and technology in private and third sector entities',
+      'A serial civic entrepreneur with a particular passion for young marginalised and minority communities. She is an impact advisor to a number of charities and startups',
+      "Raised and inspired by some of the most impactful figures who helped shape her land of birth, following her escape to the west, she has lived and worked with a third of the world's cultures",
+    ],
+  },
+];
+---
+
+<section class="leadership" id="leadership" aria-label="Leadership">
+  <h2 class="leadership-title">Leadership</h2>
+  <div class="leadership-grid">
+    {
+      people.map((person, i) => (
+        <article class="person reveal" style={`--reveal-delay: ${i * 60}`}>
+          <div class="person-head">
+            <img src={person.photo} alt={person.name} width="88" height="88" loading="lazy" />
+            <div class="person-id">
+              <span class="person-role">{person.role}</span>
+              <h3 class="person-name">{person.name}</h3>
+            </div>
+          </div>
+          <p class="person-positioning">{person.positioning}</p>
+          <ul class="person-chips" aria-label={`${person.name} — key credentials`}>
+            {person.chips.map((chip) => (
+              <li>{chip}</li>
+            ))}
+          </ul>
+          <details class="person-more">
+            <summary>Full bio</summary>
+            <ul class="person-bio">
+              {person.bio.map((line) => (
+                <li>{line}</li>
+              ))}
+            </ul>
+          </details>
+        </article>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .leadership {
+    padding: 0 var(--pad) var(--section-gap);
+  }
+  .leadership-title {
+    margin: 0 0 32px;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.1;
+    color: var(--text);
+  }
+  .leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: start;
+  }
+  .person {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 28px;
+    border-radius: 24px;
+    background: rgba(232, 221, 210, 0.05);
+    border: 1px solid var(--line);
+  }
+  .person-head {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .person-head img {
+    width: 88px;
+    height: 88px;
+    flex: none;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(212, 43, 39, 0.55);
+  }
+  .person-id {
+    min-width: 0;
+  }
+  .person-role {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--red-300);
+    margin-bottom: 4px;
+  }
+  .person-name {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 1.25;
+    color: var(--bone);
+  }
+  .person-positioning {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+  .person-chips {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .person-chips li {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--bone);
+    border: 1px solid rgba(232, 221, 210, 0.28);
+    background: rgba(232, 221, 210, 0.06);
+    border-radius: 999px;
+    padding: 6px 12px;
+  }
+  .person-more {
+    margin-top: 2px;
+  }
+  .person-more summary {
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--red-300);
+    padding: 6px 0;
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .person-more summary::-webkit-details-marker {
+    display: none;
+  }
+  .person-more summary::after {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg) translateY(-2px);
+    transition: transform 0.2s ease-out;
+  }
+  .person-more[open] summary::after {
+    transform: rotate(225deg) translateY(-1px);
+  }
+  .person-more summary:hover {
+    color: var(--ember);
+  }
+  .person-more summary:focus-visible {
+    outline: 2px solid var(--red-300);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  .person-bio {
+    margin: 10px 0 0;
+    padding: 0 0 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .person-bio li {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+  .person-bio li::marker {
+    color: rgba(212, 43, 39, 0.7);
+  }
+
+  @media (max-width: 1024px) {
+    .leadership-grid {
+      grid-template-columns: 1fr;
+      max-width: 640px;
+    }
+  }
+</style>

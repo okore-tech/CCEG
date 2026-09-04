@@ -1,11 +1,17 @@
 ---
 const navLinks = [
-  { label: 'iRWA', href: '#', active: true },
-  { label: 'Genome of Values', href: '#' },
-  { label: 'Research', href: '#' },
-  { label: 'Education', href: '#' },
-  { label: 'Leadership', href: '#' },
-  { label: 'Advisory Board', href: '#' },
+  { label: 'Home', href: '/' },
+  { label: 'Genome of Values', href: '/genome-of-values/' },
+  { label: 'Leadership', href: '/#leadership' },
+  { label: 'Partners', href: '#' },
+].map((link) => ({
+  ...link,
+  active: Astro.url.pathname.replace(/\/$/, '') === link.href.replace(/\/$/, ''),
+}));
+
+const externalLinks = [
+  { label: 'iRWA', href: 'https://irwa.digital/' },
+  { label: 'Research', href: 'https://www.frontiersin.org/journals/blockchain' },
 ];
 ---
 
@@ -44,11 +50,31 @@ const navLinks = [
         </a>
       ))
     }
-    <div class="nav-secondary">
-      <a href="#">Members' area</a>
-      <a href="#">Social Value &amp; Intangibles Review</a>
+    <div class="nav-external" aria-label="Our sites elsewhere">
+      {
+        externalLinks.map((link) => (
+          <a href={link.href} class="nav-ext-link" target="_blank" rel="noopener">
+            {link.label}
+            <svg
+              width="11"
+              height="11"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M7 17 17 7" />
+              <path d="M9 7h8v8" />
+            </svg>
+            <span class="sr-only">(external site)</span>
+          </a>
+        ))
+      }
     </div>
-    <a href="#contact" class="nav-cta">Contact</a>
+    <a href="mailto:info@cceg.org.uk" class="nav-cta">Contact</a>
   </nav>
 </header>
 
@@ -164,10 +190,29 @@ const navLinks = [
     opacity: 1;
     background: var(--ember);
   }
-  .nav-secondary {
-    display: none;
-  }
 
+  /* External sites: separated group with outbound markers */
+  .nav-external {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: 14px;
+    padding-left: 18px;
+    border-left: 1px solid var(--line);
+  }
+  .main-nav a.nav-ext-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+  }
+  .nav-ext-link svg {
+    opacity: 0.55;
+    flex: none;
+  }
+  .main-nav a.nav-ext-link:hover svg {
+    opacity: 1;
+  }
   .nav-toggle {
     display: none;
     background: none;
@@ -217,18 +262,19 @@ const navLinks = [
     .main-nav a.nav-cta {
       margin: 8px 0 0;
       text-align: center;
+      justify-content: center;
     }
-    .nav-secondary {
-      display: flex;
+    .nav-external {
       flex-direction: column;
+      align-items: stretch;
       gap: 2px;
-      margin-top: 8px;
-      padding-top: 8px;
+      margin: 8px 0 0;
+      padding: 8px 0 0;
+      border-left: 0;
       border-top: 1px solid var(--line);
     }
-    .nav-secondary a {
-      font-weight: 600;
-      font-size: 12.5px;
+    .main-nav a.nav-ext-link {
+      justify-content: space-between;
     }
     .site-header.nav-open .nav-toggle span:nth-child(1) {
       transform: translateY(6px) rotate(45deg);

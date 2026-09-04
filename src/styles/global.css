@@ -15,6 +15,7 @@
   --bone: #e8ddd2;
   --sand: #d8c3a5;
   --pad: clamp(20px, 3.9vw, 56px);
+  --section-gap: clamp(72px, 9vw, 140px);
   --font-display: 'Caprasimo', Georgia, serif;
   --font-body: 'Figtree', system-ui, -apple-system, sans-serif;
 }
