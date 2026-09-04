@@ -2,6 +2,6 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://cceg.org.uk',
+  site: 'https://www.cceg.org.uk',
   integrations: [sitemap()],
 });
