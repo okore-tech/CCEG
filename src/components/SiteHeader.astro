@@ -1,6 +1,6 @@
 ---
 const navLinks = [
-  { label: 'iRWA', href: 'https://irwa.digital/', external: true },
+  { label: 'iRWA', href: 'https://irwa.digital/', external: true, special: true },
   { label: 'Home', href: '/' },
   { label: 'Genome of Values', href: '/genome-of-values/' },
   { label: 'Leadership', href: '/#leadership' },
@@ -44,7 +44,9 @@ const externalLinks = [
       navLinks.map((link) => (
         <a
           href={link.href}
-          class:list={[{ 'is-active': link.active, 'nav-ext-link': link.external }]}
+          class:list={[
+            { 'is-active': link.active, 'nav-ext-link': link.external, 'nav-irwa': link.special },
+          ]}
           aria-current={link.active ? 'page' : undefined}
           target={link.external ? '_blank' : undefined}
           rel={link.external ? 'noopener' : undefined}
@@ -211,6 +213,23 @@ const externalLinks = [
   .main-nav a.nav-cta:hover {
     opacity: 1;
     background: var(--ember);
+  }
+
+  /* iRWA: the flagship — crimson pill, distinct from everything else */
+  .main-nav a.nav-irwa {
+    color: var(--red-300);
+    border: 1px solid rgba(212, 43, 39, 0.5);
+    background: rgba(212, 43, 39, 0.1);
+    margin-right: 6px;
+  }
+  .main-nav a.nav-irwa:hover {
+    opacity: 1;
+    color: #fff;
+    border-color: var(--red);
+    background: rgba(212, 43, 39, 0.28);
+  }
+  .main-nav a.nav-irwa svg {
+    opacity: 0.8;
   }
 
   /* External sites: separated group with outbound markers */
