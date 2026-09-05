@@ -3,6 +3,7 @@ const people = [
   {
     role: 'Founder',
     name: 'Olinga Taeed PhD FIoD',
+    linkedin: 'https://www.linkedin.com/in/olingataeed/',
     photo: '/leadership/olinga-taeed.jpg',
     positioning:
       'Inventor of the Social Earnings Ratio® — which the Vatican labelled "The God Metric" — the fastest adopted social impact metric in the world.',
@@ -24,6 +25,7 @@ const people = [
   {
     role: 'CEO',
     name: 'Barbara Taeed MBA ACIB MIRM',
+    linkedin: 'https://www.linkedin.com/in/barbara-t-a3671a16/',
     photo: '/leadership/barbara-taeed.jpg',
     positioning:
       "A senior career banker specialising in payments and risk — previously responsible for the cyber security and resilience of the UK's banking infrastructure, £385bn of transactions per day.",
@@ -41,6 +43,7 @@ const people = [
   {
     role: 'Chair Advisory Board',
     name: 'Tahirih Danesh PhD (law)',
+    linkedin: 'https://www.linkedin.com/in/ttdanesh/',
     photo: '/leadership/tahirih-danesh.jpg',
     positioning:
       'CEO of the leading foundation on education in Africa — a serial civic entrepreneur focused on socioeconomic rights through education and technology.',
@@ -66,6 +69,18 @@ const people = [
             <div class="person-id">
               <span class="person-role">{person.role}</span>
               <h3 class="person-name">{person.name}</h3>
+              <a
+                class="person-linkedin"
+                href={person.linkedin}
+                target="_blank"
+                rel="noopener"
+                aria-label={`${person.name} on LinkedIn`}
+              >
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true">
+                  <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12M7.12 20.45H3.56V9h3.56zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0" />
+                </svg>
+                LinkedIn
+              </a>
             </div>
           </div>
           <p class="person-positioning">{person.positioning}</p>
@@ -147,6 +162,21 @@ const people = [
     font-size: 19px;
     line-height: 1.25;
     color: var(--bone);
+  }
+  .person-linkedin {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s ease-out;
+  }
+  .person-linkedin:hover {
+    opacity: 1;
+    color: var(--red-300);
   }
   .person-positioning {
     margin: 0;
