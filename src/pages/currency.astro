@@ -89,18 +89,47 @@ const milestones = [
       </aside>
     </section>
 
-    <!-- ============ Two tokens / Total Value ============ -->
+    <!-- ============ Two tokens / Total Value (light band) ============ -->
     <section class="cur-tokens" aria-label="The two-token currency">
-      <h2>One currency, two kinds of value</h2>
-      <p class="tokens-intro">
-        Our research — documented through
-        <a href="https://ccegblockchain.com/white-papers/" target="_blank" rel="noopener"
-          >17 whitepapers</a
-        > — led to the launch of a two-token
-        currency, and with it the idea of <strong>Total Value</strong>: financial value represented
-        by the universally accepted Price Earnings Ratio, and non-financial value represented by
-        the Social Earnings Ratio®.
-      </p>
+      <div class="tokens-head">
+        <div>
+          <h2>One currency, two kinds of value</h2>
+          <p class="tokens-intro">
+            Years of research led to a two-token currency — and to the idea of{' '}
+            <strong>Total Value</strong>.
+          </p>
+        </div>
+        <a
+          class="wp-stack"
+          href="https://ccegblockchain.com/white-papers/"
+          target="_blank"
+          rel="noopener"
+        >
+          <span class="wp-sheet s3" aria-hidden="true"></span>
+          <span class="wp-sheet s2" aria-hidden="true"></span>
+          <span class="wp-sheet s1">
+            <b>17</b>
+            <span class="wp-word">whitepapers</span>
+            <span class="wp-read">
+              read the research
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M7 17 17 7" />
+                <path d="M9 7h8v8" />
+              </svg>
+            </span>
+          </span>
+        </a>
+      </div>
       <div class="tokens-split">
         <article class="token token-ser">
           <span class="token-badge">SER</span>
@@ -352,28 +381,106 @@ const milestones = [
     color: var(--muted);
   }
 
-  /* ---------- Two tokens ---------- */
+  /* ---------- Two tokens: the bright band ---------- */
   .cur-tokens {
-    padding: 0 var(--pad) var(--section-gap);
+    --ink: #241514;
+    --ink-soft: rgba(58, 38, 33, 0.78);
+    margin: 0 var(--pad) var(--section-gap);
+    padding: clamp(36px, 4.5vw, 64px);
+    border-radius: 40px;
+    background:
+      radial-gradient(ellipse at 85% -10%, rgba(212, 43, 39, 0.14), transparent 55%),
+      linear-gradient(180deg, #f8f1e8, #efe2d1);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  }
+  .cur-tokens h2 {
+    color: var(--ink);
+  }
+  .tokens-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(24px, 4vw, 56px);
+    margin-bottom: 40px;
   }
   .tokens-intro {
-    margin: 0 0 40px;
-    font-size: 15.5px;
-    line-height: 1.7;
-    max-width: 64ch;
-    color: var(--muted);
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.65;
+    max-width: 42ch;
+    color: var(--ink-soft);
   }
   .tokens-intro strong {
-    color: var(--bone);
+    color: var(--red);
   }
-  .tokens-intro a {
-    color: var(--red-300);
-    text-decoration: underline;
-    text-underline-offset: 3px;
+
+  /* Whitepapers: a clickable stack of sheets */
+  .wp-stack {
+    position: relative;
+    flex: none;
+    width: 176px;
+    height: 148px;
+    text-decoration: none;
+    transition: transform 0.25s ease-out;
   }
-  .tokens-intro a:hover {
-    color: var(--ember);
+  .wp-stack:hover {
     opacity: 1;
+    transform: translateY(-4px) rotate(0.6deg);
+  }
+  .wp-stack:focus-visible {
+    outline: 2px solid var(--red);
+    outline-offset: 5px;
+    border-radius: 12px;
+  }
+  .wp-sheet {
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    background: #fffdf9;
+    border: 1px solid rgba(88, 60, 40, 0.22);
+    box-shadow: 0 10px 24px rgba(60, 35, 20, 0.18);
+  }
+  .wp-sheet.s3 {
+    transform: rotate(-4deg) translate(-5px, 5px);
+    background: #f3e9db;
+  }
+  .wp-sheet.s2 {
+    transform: rotate(2.5deg) translate(4px, 2px);
+    background: #faf4ea;
+  }
+  .wp-sheet.s1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1px;
+    padding: 16px 20px;
+  }
+  .wp-sheet.s1 b {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 52px;
+    line-height: 1;
+    color: var(--red);
+  }
+  .wp-word {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #241514;
+  }
+  .wp-read {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 8px;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: rgba(58, 38, 33, 0.6);
+  }
+  .wp-stack:hover .wp-read {
+    color: var(--red);
   }
   .tokens-split {
     display: flex;
@@ -390,13 +497,13 @@ const milestones = [
   }
   .token-ser {
     background:
-      radial-gradient(ellipse at 80% 0%, rgba(223, 178, 113, 0.18), transparent 55%),
-      rgba(223, 178, 113, 0.07);
-    border: 1px solid rgba(223, 178, 113, 0.45);
+      radial-gradient(ellipse at 80% 0%, rgba(223, 178, 113, 0.35), transparent 55%),
+      rgba(255, 251, 244, 0.75);
+    border: 1px solid rgba(169, 124, 60, 0.5);
   }
   .token-mcr {
-    background: rgba(232, 221, 210, 0.04);
-    border: 2px dashed rgba(232, 221, 210, 0.4);
+    background: rgba(255, 251, 244, 0.45);
+    border: 2px dashed rgba(120, 84, 70, 0.45);
   }
   .token-badge {
     align-self: flex-start;
@@ -411,21 +518,21 @@ const milestones = [
     color: #241503;
   }
   .token-mcr .token-badge {
-    border: 1px solid rgba(232, 221, 210, 0.45);
-    color: var(--bone);
+    border: 1px solid rgba(120, 84, 70, 0.55);
+    color: var(--ink);
   }
   .token h3 {
     margin: 0;
     font-family: var(--font-display);
     font-weight: 400;
     font-size: clamp(24px, 2.6vw, 32px);
-    color: var(--text);
+    color: var(--ink);
   }
   .token p {
     margin: 0;
     font-size: 14.5px;
     line-height: 1.6;
-    color: var(--muted);
+    color: var(--ink-soft);
     max-width: 34ch;
   }
   .token-ratio {
@@ -436,20 +543,20 @@ const milestones = [
     line-height: 1;
   }
   .token-ser .token-ratio {
-    color: var(--gold);
+    color: var(--gold-deep);
   }
   .token-mcr .token-ratio {
-    color: var(--red-300);
+    color: var(--red);
   }
   .token-ratio-label {
     font-size: 12px;
-    color: var(--muted);
+    color: var(--ink-soft);
   }
   .tokens-plus {
     align-self: center;
     font-family: var(--font-display);
     font-size: clamp(36px, 4vw, 56px);
-    color: var(--muted);
+    color: rgba(58, 38, 33, 0.5);
     flex: none;
   }
   .total-value {
@@ -462,33 +569,34 @@ const milestones = [
     padding: clamp(24px, 3vw, 36px);
     border-radius: 999px;
     background:
-      radial-gradient(ellipse at 30% 0%, rgba(212, 43, 39, 0.12), transparent 60%),
-      rgba(232, 221, 210, 0.05);
-    border: 1px solid var(--line);
+      radial-gradient(ellipse at 25% 0%, rgba(255, 255, 255, 0.16), transparent 55%),
+      linear-gradient(135deg, var(--red), var(--red-600));
+    box-shadow: 0 18px 44px rgba(156, 24, 21, 0.35);
   }
   .tv-label {
     font-family: var(--font-display);
     font-size: clamp(24px, 3vw, 38px);
-    color: var(--text);
+    color: #fff;
   }
   .tv-eq {
     font-family: var(--font-display);
     font-size: clamp(24px, 3vw, 38px);
-    color: var(--muted);
+    color: rgba(255, 255, 255, 0.85);
   }
   .tv-eq b {
     font-weight: 400;
   }
   .tv-pe {
-    color: var(--gold);
+    color: #ffdfae;
   }
   .tv-se {
-    color: var(--red-300);
+    color: var(--red-200);
   }
 
-  /* ---------- Milestones ---------- */
+  /* ---------- Milestones (crimson wash) ---------- */
   .cur-milestones {
-    padding: 0 var(--pad) var(--section-gap);
+    padding: clamp(36px, 4.5vw, 56px) var(--pad) var(--section-gap);
+    background: radial-gradient(ellipse at 12% 0%, rgba(212, 43, 39, 0.13), transparent 55%);
   }
   .cur-milestones > p {
     margin: 0 0 40px;
@@ -580,6 +688,14 @@ const milestones = [
   }
 
   @media (max-width: 700px) {
+    .tokens-head {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .wp-stack {
+      align-self: center;
+      margin-top: 8px;
+    }
     .tokens-split {
       flex-direction: column;
     }
