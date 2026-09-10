@@ -93,7 +93,10 @@ const milestones = [
     <section class="cur-tokens" aria-label="The two-token currency">
       <h2>One currency, two kinds of value</h2>
       <p class="tokens-intro">
-        Our research — documented through 17 whitepapers — led to the launch of a two-token
+        Our research — documented through
+        <a href="https://ccegblockchain.com/white-papers/" target="_blank" rel="noopener"
+          >17 whitepapers</a
+        > — led to the launch of a two-token
         currency, and with it the idea of <strong>Total Value</strong>: financial value represented
         by the universally accepted Price Earnings Ratio, and non-financial value represented by
         the Social Earnings Ratio®.
@@ -362,6 +365,15 @@ const milestones = [
   }
   .tokens-intro strong {
     color: var(--bone);
+  }
+  .tokens-intro a {
+    color: var(--red-300);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .tokens-intro a:hover {
+    color: var(--ember);
+    opacity: 1;
   }
   .tokens-split {
     display: flex;
