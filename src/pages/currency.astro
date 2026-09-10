@@ -1,0 +1,645 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+const milestones = [
+  {
+    year: '2017',
+    text: "The UK's first official ICO — completing the FCA compliance process.",
+    done: true,
+  },
+  {
+    year: '2018',
+    text: 'Award winner at the Financial Times Innovation Award, represented by our lawyers Eversheds Sutherland.',
+    done: true,
+  },
+  {
+    year: '2027',
+    text: 'Real-life roll-out of our impact currencies begins.',
+    done: false,
+  },
+];
+---
+
+<BaseLayout
+  title="Currency — CCEG"
+  description="Money is an agent of values. CCEG's two-token currency — the Seratio® (SER) for hard financial value and the Microshare™ (MCR) for soft intangible value — makes Total Value tradable: p/e + s/e."
+>
+  <SiteHeader />
+  <main class="currency">
+    <!-- ============ Hero: statement + flipping coin ============ -->
+    <section class="cur-hero">
+      <div class="cur-hero-copy">
+        <h1>
+          <span>Money is an</span>
+          <span>agent of <em>values.</em></span>
+        </h1>
+        <p>
+          The dollar represents McDonalds, Coca-Cola and American values. Russia and Iran are
+          amongst the countries that have found reliance on dollar-backed commodities problematic.
+          That is why some countries now trade in Chinese Yuan, and why alternative currencies rise
+          where BRICS countries can unite with greater trust. CCEG has conducted years of research
+          and experimentation.
+        </p>
+        <blockquote class="cur-pull">
+          A currency can be weaponized to articulate a particular set of values.
+        </blockquote>
+      </div>
+      <figure class="cur-coin-stage" aria-hidden="true">
+        <div class="coin">
+          <div class="coin-face coin-ser">
+            <span class="coin-sym">SER</span>
+            <span class="coin-name">Seratio®</span>
+            <span class="coin-kind">hard · financial</span>
+          </div>
+          <div class="coin-face coin-mcr">
+            <span class="coin-sym">MCR</span>
+            <span class="coin-name">Microshare™</span>
+            <span class="coin-kind">soft · intangible</span>
+          </div>
+          <div class="coin-edge"></div>
+        </div>
+        <div class="coin-shadow"></div>
+        <figcaption class="sr-only">
+          A coin slowly turning between its two faces: SER, the Seratio, and MCR, the Microshare.
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- ============ Programmable money ============ -->
+    <section class="cur-programmable">
+      <div class="prog-copy">
+        <h2>Programmable money carries ideology</h2>
+        <p>
+          Digital currency is programmable money — values can be integrated directly into its
+          operational use. We predicted the Trump coin early on. We all know about Bitcoin,
+          although people don't fully understand that it now has institutional support like gold.
+          You don't have to understand how a 'Ku Klux coin' works, but you instinctively know
+          whether you want to get paid in it — you will need a community who would accept it,
+          otherwise it's worthless to you.
+        </p>
+        <p class="prog-law">Values of giver and receiver must align.</p>
+      </div>
+      <aside class="prog-stat" aria-label="Trump coin support">
+        <span class="stat-figure">$1.4bn</span>
+        <span class="stat-caption">
+          of support gathered by the Trump coin — for his ideology, not any financial imperative
+        </span>
+      </aside>
+    </section>
+
+    <!-- ============ Two tokens / Total Value ============ -->
+    <section class="cur-tokens" aria-label="The two-token currency">
+      <h2>One currency, two kinds of value</h2>
+      <p class="tokens-intro">
+        Our research — documented through 17 whitepapers — led to the launch of a two-token
+        currency, and with it the idea of <strong>Total Value</strong>: financial value represented
+        by the universally accepted Price Earnings Ratio, and non-financial value represented by
+        the Social Earnings Ratio®.
+      </p>
+      <div class="tokens-split">
+        <article class="token token-ser">
+          <span class="token-badge">SER</span>
+          <h3>Seratio®</h3>
+          <p>Hard, tangible, financial value — the money everyone already understands.</p>
+          <span class="token-ratio">p/e</span>
+          <span class="token-ratio-label">Price Earnings Ratio</span>
+        </article>
+        <div class="tokens-plus" aria-hidden="true">+</div>
+        <article class="token token-mcr">
+          <span class="token-badge">MCR</span>
+          <h3>Microshare™</h3>
+          <p>Soft, intangible, non-financial value — the value everyone feels.</p>
+          <span class="token-ratio">s/e</span>
+          <span class="token-ratio-label">Social Earnings Ratio®</span>
+        </article>
+      </div>
+      <div class="total-value" role="img" aria-label="Total Value equals p over e plus s over e">
+        <span class="tv-label">Total Value</span>
+        <span class="tv-eq">= <b class="tv-pe">p/e</b> + <b class="tv-se">s/e</b></span>
+      </div>
+    </section>
+
+    <!-- ============ Milestones ============ -->
+    <section class="cur-milestones" aria-label="Currency milestones">
+      <h2>From first ICO to impact currencies</h2>
+      <p>
+        We are now pioneering, in real life, the application of our impact currencies — whose value
+        is index-linked to the social impact they create for the brand, whether organisation,
+        project, process or even people.
+      </p>
+      <div class="timeline">
+        <div class="timeline-track" aria-hidden="true"></div>
+        {
+          milestones.map((m, i) => (
+            <div class:list={['milestone', 'reveal', { ahead: !m.done }]} style={`--reveal-delay: ${i * 60}`}>
+              <span class="milestone-year">{m.year}</span>
+              <span class="milestone-text">{m.text}</span>
+            </div>
+          ))
+        }
+      </div>
+      <div class="cur-actions">
+        <a href="mailto:info@cceg.org.uk" class="btn btn-solid">Talk to us</a>
+        <a href="/" class="btn btn-ghost">Back to CCEG</a>
+      </div>
+    </section>
+  </main>
+  <SiteFooter />
+</BaseLayout>
+
+<style>
+  /* Page-local accent: gold for hard financial value, playing against the crimson */
+  .currency {
+    --gold: #dfb271;
+    --gold-deep: #a97c3c;
+  }
+
+  /* ---------- Hero ---------- */
+  .cur-hero {
+    display: flex;
+    align-items: center;
+    gap: clamp(28px, 5vw, 80px);
+    padding: 56px var(--pad) var(--section-gap);
+  }
+  .cur-hero-copy {
+    flex: 1 1 58%;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    align-items: flex-start;
+  }
+  .cur-hero h1 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(42px, 6vw, 88px);
+    line-height: 1.04;
+    letter-spacing: -0.01em;
+    color: var(--text);
+  }
+  .cur-hero h1 span {
+    display: block;
+  }
+  .cur-hero h1 em {
+    font-style: normal;
+    color: var(--ember);
+  }
+  .cur-hero-copy > p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 58ch;
+    color: var(--muted);
+  }
+  .cur-pull {
+    margin: 0;
+    padding: 18px 24px;
+    font-family: var(--font-display);
+    font-size: clamp(19px, 2.2vw, 25px);
+    line-height: 1.35;
+    color: var(--bone);
+    background: rgba(212, 43, 39, 0.1);
+    border: 1px solid rgba(212, 43, 39, 0.4);
+    border-radius: 4px 28px 28px 28px;
+    max-width: 24ch;
+    transform: rotate(-1.2deg);
+  }
+
+  /* ---------- Coin ---------- */
+  .cur-coin-stage {
+    flex: 1 1 42%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+    perspective: 1100px;
+  }
+  .coin {
+    position: relative;
+    width: clamp(200px, 24vw, 300px);
+    height: clamp(200px, 24vw, 300px);
+    transform-style: preserve-3d;
+    animation: coinflip 14s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
+  .coin-face {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    backface-visibility: hidden;
+    text-align: center;
+    padding: 24px;
+  }
+  .coin-ser {
+    background:
+      radial-gradient(circle at 32% 28%, rgba(255, 245, 224, 0.5), transparent 45%),
+      linear-gradient(135deg, var(--gold), var(--gold-deep));
+    border: 6px solid rgba(255, 240, 210, 0.35);
+    box-shadow: 0 24px 60px rgba(223, 178, 113, 0.28);
+  }
+  .coin-mcr {
+    transform: rotateY(180deg);
+    background: rgba(232, 221, 210, 0.05);
+    border: 3px dashed rgba(232, 221, 210, 0.55);
+  }
+  .coin-sym {
+    font-family: var(--font-display);
+    font-size: clamp(44px, 5.4vw, 66px);
+    line-height: 1;
+  }
+  .coin-ser .coin-sym {
+    color: #241503;
+  }
+  .coin-mcr .coin-sym {
+    color: var(--bone);
+  }
+  .coin-name {
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .coin-ser .coin-name {
+    color: rgba(36, 21, 3, 0.85);
+  }
+  .coin-mcr .coin-name {
+    color: var(--red-300);
+  }
+  .coin-kind {
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .coin-ser .coin-kind {
+    color: rgba(36, 21, 3, 0.6);
+  }
+  .coin-mcr .coin-kind {
+    color: var(--muted);
+  }
+  .coin-shadow {
+    width: 62%;
+    height: 16px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(0, 0, 0, 0.55), transparent 70%);
+    animation: coinshadow 14s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
+
+  /* ---------- Programmable money ---------- */
+  .cur-programmable {
+    display: flex;
+    align-items: stretch;
+    gap: clamp(24px, 4vw, 56px);
+    padding: 0 var(--pad) var(--section-gap);
+  }
+  .prog-copy {
+    flex: 1 1 60%;
+  }
+  .cur-programmable h2,
+  .cur-tokens h2,
+  .cur-milestones h2 {
+    margin: 0 0 18px;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(28px, 3.6vw, 42px);
+    line-height: 1.12;
+    color: var(--text);
+  }
+  .prog-copy p {
+    margin: 0 0 16px;
+    font-size: 15.5px;
+    line-height: 1.7;
+    max-width: 60ch;
+    color: var(--muted);
+  }
+  .prog-law {
+    font-family: var(--font-display);
+    font-size: 21px;
+    color: var(--red-300);
+  }
+  .prog-stat {
+    flex: 1 1 40%;
+    max-width: 380px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: clamp(28px, 3.5vw, 44px);
+    border-radius: 28px 28px 28px 4px;
+    background:
+      radial-gradient(ellipse at 20% 0%, rgba(223, 178, 113, 0.16), transparent 60%),
+      rgba(232, 221, 210, 0.05);
+    border: 1px solid rgba(223, 178, 113, 0.4);
+    transform: rotate(1deg);
+  }
+  .stat-figure {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 5.5vw, 72px);
+    line-height: 1;
+    color: var(--gold);
+  }
+  .stat-caption {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+
+  /* ---------- Two tokens ---------- */
+  .cur-tokens {
+    padding: 0 var(--pad) var(--section-gap);
+  }
+  .tokens-intro {
+    margin: 0 0 40px;
+    font-size: 15.5px;
+    line-height: 1.7;
+    max-width: 64ch;
+    color: var(--muted);
+  }
+  .tokens-intro strong {
+    color: var(--bone);
+  }
+  .tokens-split {
+    display: flex;
+    align-items: stretch;
+    gap: clamp(14px, 2vw, 24px);
+  }
+  .token {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: clamp(26px, 3vw, 40px);
+    border-radius: 28px;
+  }
+  .token-ser {
+    background:
+      radial-gradient(ellipse at 80% 0%, rgba(223, 178, 113, 0.18), transparent 55%),
+      rgba(223, 178, 113, 0.07);
+    border: 1px solid rgba(223, 178, 113, 0.45);
+  }
+  .token-mcr {
+    background: rgba(232, 221, 210, 0.04);
+    border: 2px dashed rgba(232, 221, 210, 0.4);
+  }
+  .token-badge {
+    align-self: flex-start;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 999px;
+  }
+  .token-ser .token-badge {
+    background: var(--gold);
+    color: #241503;
+  }
+  .token-mcr .token-badge {
+    border: 1px solid rgba(232, 221, 210, 0.45);
+    color: var(--bone);
+  }
+  .token h3 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(24px, 2.6vw, 32px);
+    color: var(--text);
+  }
+  .token p {
+    margin: 0;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--muted);
+    max-width: 34ch;
+  }
+  .token-ratio {
+    margin-top: auto;
+    padding-top: 18px;
+    font-family: var(--font-display);
+    font-size: clamp(36px, 4vw, 52px);
+    line-height: 1;
+  }
+  .token-ser .token-ratio {
+    color: var(--gold);
+  }
+  .token-mcr .token-ratio {
+    color: var(--red-300);
+  }
+  .token-ratio-label {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .tokens-plus {
+    align-self: center;
+    font-family: var(--font-display);
+    font-size: clamp(36px, 4vw, 56px);
+    color: var(--muted);
+    flex: none;
+  }
+  .total-value {
+    margin-top: 28px;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: clamp(24px, 3vw, 36px);
+    border-radius: 999px;
+    background:
+      radial-gradient(ellipse at 30% 0%, rgba(212, 43, 39, 0.12), transparent 60%),
+      rgba(232, 221, 210, 0.05);
+    border: 1px solid var(--line);
+  }
+  .tv-label {
+    font-family: var(--font-display);
+    font-size: clamp(24px, 3vw, 38px);
+    color: var(--text);
+  }
+  .tv-eq {
+    font-family: var(--font-display);
+    font-size: clamp(24px, 3vw, 38px);
+    color: var(--muted);
+  }
+  .tv-eq b {
+    font-weight: 400;
+  }
+  .tv-pe {
+    color: var(--gold);
+  }
+  .tv-se {
+    color: var(--red-300);
+  }
+
+  /* ---------- Milestones ---------- */
+  .cur-milestones {
+    padding: 0 var(--pad) var(--section-gap);
+  }
+  .cur-milestones > p {
+    margin: 0 0 40px;
+    font-size: 15.5px;
+    line-height: 1.7;
+    max-width: 64ch;
+    color: var(--muted);
+  }
+  .timeline {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding-top: 26px;
+  }
+  .timeline-track {
+    position: absolute;
+    top: 5px;
+    left: 6px;
+    right: 6px;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      var(--gold) 0%,
+      var(--red) 52%,
+      rgba(232, 221, 210, 0.22) 60%,
+      rgba(232, 221, 210, 0.22) 100%
+    );
+  }
+  .milestone {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .milestone::before {
+    content: '';
+    position: absolute;
+    top: -26px;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--red);
+  }
+  .milestone:first-child::before {
+    background: var(--gold);
+  }
+  .milestone.ahead::before {
+    background: var(--bg);
+    border: 2px solid rgba(232, 221, 210, 0.45);
+  }
+  .milestone-year {
+    font-family: var(--font-display);
+    font-size: 26px;
+    color: var(--bone);
+  }
+  .milestone.ahead .milestone-year {
+    color: var(--red-300);
+  }
+  .milestone-text {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--muted);
+    max-width: 30ch;
+  }
+  .cur-actions {
+    margin-top: 44px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 980px) {
+    .cur-hero {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .cur-coin-stage {
+      align-self: center;
+    }
+    .cur-programmable {
+      flex-direction: column;
+    }
+    .prog-stat {
+      align-self: flex-start;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .tokens-split {
+      flex-direction: column;
+    }
+    .timeline {
+      grid-template-columns: 1fr;
+      padding-top: 0;
+      padding-left: 26px;
+      gap: 28px;
+    }
+    .timeline-track {
+      top: 6px;
+      bottom: 6px;
+      left: 5px;
+      right: auto;
+      width: 2px;
+      height: auto;
+      background: linear-gradient(
+        180deg,
+        var(--gold) 0%,
+        var(--red) 52%,
+        rgba(232, 221, 210, 0.22) 60%,
+        rgba(232, 221, 210, 0.22) 100%
+      );
+    }
+    .milestone::before {
+      top: 6px;
+      left: -26px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .coin {
+      animation: none;
+    }
+    .coin-shadow {
+      animation: none;
+    }
+    .cur-pull,
+    .prog-stat {
+      transform: none;
+    }
+  }
+</style>
+
+<style is:global>
+  /* Coin flip keyframes (global so Astro scoping doesn't rename them) */
+  @keyframes coinflip {
+    0%,
+    38% {
+      transform: rotateY(0deg);
+    }
+    50%,
+    88% {
+      transform: rotateY(180deg);
+    }
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+  @keyframes coinshadow {
+    0%,
+    38%,
+    50%,
+    88%,
+    100% {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+    44%,
+    94% {
+      transform: scaleX(0.45);
+      opacity: 0.7;
+    }
+  }
+</style>
